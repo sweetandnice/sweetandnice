@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bunnie's Page</title>
 
   <style>
@@ -34,14 +35,27 @@
       align-items: center;
     }
     
-    .header img {
-      margin-left: 20px;
+    .header-img {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header2.png" width="1200">
+  <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header2.png">
   
   <p>My Name Is Eva Ruth.
     <a href="art.html">I draw and paint</a> and <a href="erf.html">I love Earth</a>. This is extra memory space to store my thoughts and document my life. 
