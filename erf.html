@@ -33,37 +33,29 @@
       color: green;
     }
 
-    /* --- HEADER IMAGE + GIF SIDE BY SIDE --- */
     .header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px;
       max-width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
       overflow: hidden;
-      padding: 10px;
     }
 
     .header img {
-      height: 20vh;   /* shared height, responsive */
+      height: clamp(140px, 22vw, 320px);
       width: auto;
-      flex-shrink: 1; /* allows both images to shrink on small screens */
-    }
-
-    /* Make them slightly smaller on very tiny screens */
-    @media (max-width: 500px) {
-      .header img {
-        height: 16vh;
-      }
+      display: block;
     }
   </style>
 </head>
 
 <body>
-
   <div class="header">
     <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf.png">
     <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
   </div>
-
 </body>
 </html>
