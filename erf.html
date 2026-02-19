@@ -33,21 +33,26 @@
       color: green;
     }
 
-    .header {
+    ..header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      max-width: 100%;
-      padding: 12px;
-      box-sizing: border-box;
-      overflow: hidden;
+    }
+    
+    .header-img {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      display: block;
     }
 
-    .header img {
-      height: clamp(140px, 22vw, 320px);
-      width: auto;
-      display: block;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
