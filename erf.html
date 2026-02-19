@@ -33,36 +33,27 @@
       color: green;
     }
 
-    /* FIXED: correct selector + proper flex layout */
+    /* FIXED: proper flex container */
     .header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      max-width: 100%;
+      gap: 12px;
+      padding: 12px;
+      overflow: hidden; /* prevents scrollbars */
     }
 
-    /* FIXED: remove width:100%, give proportional space */
-    .header-img {
-      flex: 3;          /* header gets ~75% of the row */
-      width: 100%;
-      height: auto;
+    /* FIXED: scale by height, not width */
+    .header img {
+      height: 220px;   /* adjust this number to taste */
+      width: auto;
+      flex-shrink: 1;  /* allows them to shrink on small screens */
       display: block;
     }
 
-    .gif {
-      flex: 1;          /* gif gets ~25% of the row */
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 80px;
-      }
-
-      p {
-        font-size: 16px;
+    /* Mobile: shrink them a bit */
+    @media (max-width: 600px) {
+      .header img {
+        height: 150px;
       }
     }
   </style>
