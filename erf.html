@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I love Earth</title>
 
-
   <style>
     body {
       background-color: black;
       color: white;
+      margin: 0;
+      padding: 0;
     }
-    
-     @font-face {
+
+    @font-face {
       font-family: "Pinyon";
       src: url("fonts/PinyonScript-Regular.ttf") format("opentype");
     }
-    
+
     h1 {
       font-family: "Bradthen";
       font-size: 200px;
@@ -31,31 +32,38 @@
       font-size: 40px;
       color: green;
     }
-    
+
+    /* --- HEADER IMAGE + GIF SIDE BY SIDE --- */
     .header {
       display: flex;
-      align-items: center;   /* aligns them by height */
+      align-items: center;
       gap: 10px;
       max-width: 100%;
-      overflow: hidden;      /* prevents overflow on tiny screens */
+      overflow: hidden;
+      padding: 10px;
     }
 
     .header img {
-      height: auto;
-      max-height: 150px;     /* controls the shared height */
+      height: 20vh;   /* shared height, responsive */
       width: auto;
-      flex-shrink: 1;        /* allows both images to shrink */
+      flex-shrink: 1; /* allows both images to shrink on small screens */
     }
 
-
+    /* Make them slightly smaller on very tiny screens */
+    @media (max-width: 500px) {
+      .header img {
+        height: 16vh;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <div class="header">
     <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf.png">
-    <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif" width="200">
+    <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
   </div>
-</body>
 
+</body>
 </html>
