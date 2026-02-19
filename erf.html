@@ -33,20 +33,29 @@
       color: green;
     }
 
+    /* FIXED: correct selector + proper flex layout */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 100%;
+    }
+
+    /* FIXED: remove width:100%, give proportional space */
     .header-img {
-      flex: 0 0 75%;
-      max-width: 75%;
+      flex: 3;          /* header gets ~75% of the row */
+      width: 100%;
       height: auto;
       display: block;
     }
 
     .gif {
-      flex: 0 0 25%;
-      max-width: 25%;
+      flex: 1;          /* gif gets ~25% of the row */
+      width: 100%;
       height: auto;
       display: block;
     }
-  
+
     @media (max-width: 768px) {
       h1 {
         font-size: 80px;
