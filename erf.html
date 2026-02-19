@@ -34,15 +34,25 @@
     
     .header {
       display: flex;
-      align-items: stretch; /* makes both images match height */
-      height: 300px;        /* choose whatever height looks good */
-      gap: 20px;
+      align-items: center;   /* aligns them by height */
+      gap: 10px;
+      max-width: 100%;
+      overflow: hidden;      /* prevents overflow on tiny screens */
     }
 
     .header img {
-      height: 100%;
-      width: auto;          /* keeps proportions correct */
+      height: auto;
+      max-height: 150px;     /* controls the shared height */
+      width: auto;
+      flex-shrink: 1;        /* allows both images to shrink */
     }
+
+/* Make them shrink even more on very small screens */
+@media (max-width: 500px) {
+  .header img {
+    max-height: 100px;
+  }
+}
 
   </style>
 </head>
