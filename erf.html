@@ -34,14 +34,14 @@
     
     .header {
       display: flex;
-      align-items: center;
+      align-items: stretch; /* makes both images match height */
+      height: 300px;        /* choose whatever height looks good */
+      gap: 20px;
     }
 
-    .header-img {
-      width: 100%;
-      max-width: 1200px;
-      height: auto;
-      display: block;
+    .header img {
+      height: 100%;
+      width: auto;          /* keeps proportions correct */
     }
 
   </style>
