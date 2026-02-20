@@ -9,11 +9,13 @@
     body {
       background-color: black;
     }
-    
+
     .header-img {
-      height: 200px;   /* change this number to whatever feels right */
-      width: auto;
+      width: 100%;      /* lets it shrink on small screens */
+      height: auto;     /* keeps proportions correct */
+      max-width: 600px; /* optional: controls desktop size */
       display: block;
+      margin: 0 auto 20px;
     }
 
     p {
@@ -27,7 +29,6 @@
   <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-art.png">
   <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png" width="400">
   <p>Oil painting of Townes Van Zandt on cardboard</p>
-
   <p>
     <a href="artists-i-like.html">Artists I Like</a>
   </p>
