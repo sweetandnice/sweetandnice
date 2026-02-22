@@ -22,15 +22,61 @@
       font-size: 20px;
       color: white;
     }
+    .gallery {
+      width: 400px;          /* adjust to taste */
+      margin: 40px auto;
+      position: relative;
+    }
+
+  .gallery img {
+      width: 100%;
+      display: block;
+      border: 3px solid #ff008f; /* optional: pink border */
+    }
+
+  .caption {
+      color: white;
+      text-align: center;
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+  .slide {
+      display: none;
+    }
+
+  .slide.active {
+      display: block;
+  }
   </style>
 </head>
 
 <body>
   <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-art.png">
-  <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png" width="400">
-  <p>Oil painting of Townes Van Zandt on cardboard</p>
-  <p>
+  <div class="gallery">
+  <div class="slide active">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
+    <p class="caption">Oil painting of Townes Van Zandt</p>
+  </div>
+
+  <div class="slide">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
+    <p class="caption">Acrylic painting inspired by Isabel Allende's House of the Spirits</p>
+  </div>
+
     <a href="artists-i-like.html">Artists I Like</a>
   </p>
+  <script>
+  let index = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showNext() {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }
+
+  setInterval(showNext, 3000); // change every 3 seconds
+</script>
 </body>
 </html>
