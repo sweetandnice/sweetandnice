@@ -25,16 +25,22 @@
 
     /* ⭐ FIXED-HEIGHT GALLERY, VARIABLE WIDTH */
     .gallery {
-      height: 350px;          /* fixed height */
-      display: inline-block;  /* width adjusts to image */
-      overflow: hidden;       /* prevents layout jump */
+      display: inline-block;   /* width adjusts to each image */
       margin-left: 0;
-      vertical-align: top;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
     }
 
     .gallery img {
-      height: 100%;           /* image scales to fixed height */
-      width: auto;            /* width varies naturally */
+      height: 350px;           /* fixed height */
+      width: auto;             /* width varies naturally */
+      border: 4px solid #ff008f;  /* pink box */
       display: block;
     }
 
