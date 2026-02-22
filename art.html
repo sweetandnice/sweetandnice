@@ -23,20 +23,25 @@
       color: white;
     }
     .gallery {
-      width: 400px;          /* adjust to taste */
-      margin: 40px auto;
+      width: 400px;          /* or whatever size you want */
+      height: 350px;         /* ⭐ fixed height */
+      overflow: hidden;      /* hides anything taller than the box */
       position: relative;
+      margin-left: 0;        /* ⭐ sits on the left */
+      margin-top: 20px;
     }
 
   .gallery img {
       width: 100%;
-      display: block;
-      border: 3px solid #ff008f; /* optional: pink border */
+      height: 100%;          /* ⭐ fills the fixed-height box */
+      object-fit: cover;     /* keeps the image nicely cropped */
+      border: 3px solid #ff008f;
     }
+
 
   .caption {
       color: white;
-      text-align: center;
+      text-align: left;
       margin-top: 8px;
       font-size: 18px;
     }
