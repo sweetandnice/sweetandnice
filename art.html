@@ -22,37 +22,34 @@
       font-size: 20px;
       color: white;
     }
+    
     .gallery {
-      width: 400px;          /* or whatever size you want */
-      height: 350px;         /* ⭐ fixed height */
-      overflow: hidden;      /* hides anything taller than the box */
-      position: relative;
-      margin-left: 0;        /* ⭐ sits on the left */
-      margin-top: 20px;
+      height: 350px;        /* fixed height */
+      display: inline-block; /* lets width shrink/grow naturally */
+      overflow: hidden;
+      margin-left: 0;
     }
 
-  .gallery img {
-      width: 100%;
-      height: 100%;          /* ⭐ fills the fixed-height box */
-      object-fit: cover;     /* keeps the image nicely cropped */
-      border: 3px solid #ff008f;
-    }
+    .gallery img {
+      height: 100%;         /* image scales to the fixed height */
+      width: auto;          /* width adjusts based on aspect ratio */
+      display: block;
+      }
 
-
-  .caption {
+    .caption {
       color: white;
-      text-align: left;
-      margin-top: 8px;
       font-size: 18px;
+      margin-top: 8px;
+      text-align: left;
     }
 
-  .slide {
+    .slide {
       display: none;
     }
 
-  .slide.active {
+    .slide.active {
       display: block;
-  }
+    }
   </style>
 </head>
 
