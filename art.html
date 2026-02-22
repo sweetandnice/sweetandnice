@@ -11,9 +11,9 @@
     }
 
     .header-img {
-      width: 100%;      /* lets it shrink on small screens */
-      height: auto;     /* keeps proportions correct */
-      max-width: 3000px; /* optional: controls desktop size */
+      width: 100%;
+      height: auto;
+      max-width: 3000px;
       display: block;
       margin: 0 auto 20px;
     }
@@ -22,24 +22,25 @@
       font-size: 20px;
       color: white;
     }
-    
+
     .gallery {
-      height: 350px;        /* fixed height */
-      display: inline-block; /* lets width shrink/grow naturally */
-      overflow: hidden;
+      height: 350px;          /* fixed height */
+      display: inline-block;  /* width adjusts to image */
+      overflow: hidden;       /* prevents layout jump */
       margin-left: 0;
+      vertical-align: top;
     }
 
     .gallery img {
-      height: 100%;         /* image scales to the fixed height */
-      width: auto;          /* width adjusts based on aspect ratio */
+      height: 100%;           /* image scales to fixed height */
+      width: auto;            /* width varies naturally */
       display: block;
-      }
+    }
 
     .caption {
       color: white;
       font-size: 18px;
-      margin-top: 8px;
+      margin: 8px 0 20px 0;
       text-align: left;
     }
 
@@ -54,31 +55,43 @@
 </head>
 
 <body>
+
   <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-art.png">
+
   <div class="gallery">
-  <div class="slide active">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
-    <p class="caption">Oil painting of Townes Van Zandt</p>
+    <div class="slide active">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
+    </div>
+
+    <div class="slide">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
+    </div>
   </div>
 
-  <div class="slide">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
-    <p class="caption">Acrylic painting inspired by Isabel Allende's House of the Spirits</p>
-  </div>
+  <p class="caption" id="caption-text">Oil painting of Townes Van Zandt</p>
 
+  <p>
     <a href="artists-i-like.html">Artists I Like</a>
   </p>
+
   <script>
-  let index = 0;
-  const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+    const captions = [
+      "Oil painting of Townes Van Zandt",
+      "Acrylic painting inspired by Isabel Allende's House of the Spirits"
+    ];
+    const captionText = document.getElementById("caption-text");
 
-  function showNext() {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }
+    function showNext() {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+      captionText.textContent = captions[index];
+    }
 
-  setInterval(showNext, 3000); // change every 3 seconds
-</script>
+    setInterval(showNext, 3000);
+  </script>
+
 </body>
 </html>
