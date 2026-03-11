@@ -15,7 +15,6 @@
       color: white;
     }
 
-    /* Layout for portrait + gallery */
     .side-by-side {
       display: flex;
       align-items: flex-start;
@@ -52,7 +51,6 @@
       display: block;
     }
 
-    /* Pink caption under gallery */
     .caption {
       color: #ff008f;
       font-size: 18px;
@@ -65,13 +63,14 @@
 <body>
 
   <div class="side-by-side">
+
     <div class="portrait-block">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
       <p class="portrait-caption">I enjoy making art ^-^</p>
     </div>
 
     <div>
-      <div class="gallery">
+      <div class="gallery" id="gallery1">
         <div class="slide active">
           <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
         </div>
@@ -85,7 +84,20 @@
         </div>
       </div>
 
-      <p class="caption" id="caption-text"></p>
+      <p class="caption" id="caption1"></p>
+    </div>
+
+    <!-- Gallery 2 (NEW) -->
+    <div>
+      <div class="gallery" id="gallery2">
+        <div class="slide active">
+          <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
+        </div>
+
+        <!-- Add more slides here later if you want -->
+      </div>
+
+      <p class="caption" id="caption2"></p>
     </div>
 
   </div>
@@ -95,25 +107,41 @@
   </p>
 
   <script>
-    let index = 0;
-    const slides = document.querySelectorAll('.slide');
-    const captions = [
+    /* GALLERY 1 */
+    let index1 = 0;
+    const slides1 = document.querySelectorAll('#gallery1 .slide');
+    const captions1 = [
       "Oil painting of Townes Van Zandt",
       "Acrylic painting inspired by Isabel Allende's House of the Spirits",
       "Watercolor Golden Snub-Nosed Monkey Book"
     ];
-    const captionText = document.getElementById("caption-text");
+    const caption1 = document.getElementById("caption1");
+    caption1.textContent = captions1[0];
 
-    captionText.textContent = captions[0];
-
-    function showNext() {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-      captionText.textContent = captions[index];
+    function next1() {
+      slides1[index1].classList.remove('active');
+      index1 = (index1 + 1) % slides1.length;
+      slides1[index1].classList.add('active');
+      caption1.textContent = captions1[index1];
     }
+    setInterval(next1, 3000);
 
-    setInterval(showNext, 3000);
+    /* GALLERY 2 */
+    let index2 = 0;
+    const slides2 = document.querySelectorAll('#gallery2 .slide');
+    const captions2 = [
+      "Figure drawing June 2022"
+    ];
+    const caption2 = document.getElementById("caption2");
+    caption2.textContent = captions2[0];
+
+    function next2() {
+      slides2[index2].classList.remove('active');
+      index2 = (index2 + 1) % slides2.length;
+      slides2[index2].classList.add('active');
+      caption2.textContent = captions2[index2];
+    }
+    setInterval(next2, 3000);
   </script>
 
 </body>
