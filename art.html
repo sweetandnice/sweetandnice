@@ -15,6 +15,7 @@
       color: white;
     }
 
+    /* Layout for portrait + both galleries */
     .side-by-side {
       display: flex;
       align-items: flex-start;
@@ -64,11 +65,13 @@
 
   <div class="side-by-side">
 
+    <!-- Portrait + caption -->
     <div class="portrait-block">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
       <p class="portrait-caption">I enjoy making art ^-^</p>
     </div>
 
+    <!-- Gallery 1 -->
     <div>
       <div class="gallery" id="gallery1">
         <div class="slide active">
@@ -87,14 +90,18 @@
       <p class="caption" id="caption1"></p>
     </div>
 
-    <!-- Gallery 2 (NEW) -->
+    <!-- Gallery 2 (with two slides now) -->
     <div>
       <div class="gallery" id="gallery2">
+
         <div class="slide active">
           <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
         </div>
 
-        <!-- Add more slides here later if you want -->
+        <div class="slide">
+          <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-07-19%20103336.png">
+        </div>
+
       </div>
 
       <p class="caption" id="caption2"></p>
@@ -130,7 +137,8 @@
     let index2 = 0;
     const slides2 = document.querySelectorAll('#gallery2 .slide');
     const captions2 = [
-      "Figure drawing June 2022"
+      "Figure drawing June 2022",
+      "Sketchbook page circa 2020"
     ];
     const caption2 = document.getElementById("caption2");
     caption2.textContent = captions2[0];
