@@ -15,20 +15,26 @@
       color: white;
     }
 
-    /* Put the portrait + gallery next to each other */
+    /* Layout for portrait + gallery */
     .side-by-side {
       display: flex;
       align-items: flex-start;
-      gap: 20px;
+      gap: 30px;
     }
 
-    .side-by-side img {
+    .portrait-block {
       flex-shrink: 0;
+      text-align: left;
+    }
+
+    .portrait-caption {
+      color: white;
+      font-size: 20px;
+      margin-top: 8px;
     }
 
     .gallery {
       display: inline-block;
-      margin-left: 0;
     }
 
     .slide {
@@ -46,8 +52,9 @@
       display: block;
     }
 
+    /* Pink caption under gallery */
     .caption {
-      color: white;
+      color: #ff008f;
       font-size: 18px;
       margin: 8px 0 20px 0;
       text-align: left;
@@ -58,24 +65,30 @@
 <body>
 
   <div class="side-by-side">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
-
-    <div class="gallery">
-      <div class="slide active">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
-      </div>
-
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
-      </div>
-
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
-      </div>
+    <div class="portrait-block">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
+      <p class="portrait-caption">I enjoy making art ^-^</p>
     </div>
-  </div>
 
-  <p class="caption" id="caption-text"></p>
+    <div>
+      <div class="gallery">
+        <div class="slide active">
+          <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
+        </div>
+
+        <div class="slide">
+          <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
+        </div>
+
+        <div class="slide">
+          <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
+        </div>
+      </div>
+
+      <p class="caption" id="caption-text"></p>
+    </div>
+
+  </div>
 
   <p>
     <a href="artists-i-like.html">Artists I Like</a>
