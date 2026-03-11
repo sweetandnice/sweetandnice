@@ -10,17 +10,20 @@
       background-color: black;
     }
 
-    .header-img {
-      width: 100%;
-      height: auto;
-      max-width: 3000px;
-      display: block;
-      margin: 0 auto 20px;
-    }
-
     p {
       font-size: 20px;
       color: white;
+    }
+
+    /* Put the portrait + gallery next to each other */
+    .side-by-side {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .side-by-side img {
+      flex-shrink: 0;
     }
 
     .gallery {
@@ -53,19 +56,22 @@
 </head>
 
 <body>
- <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
-  <p>I enjoy making art ^-^ </p>
-  <div class="gallery">
-    <div class="slide active">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
-    </div>
 
-    <div class="slide">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
-    </div>
+  <div class="side-by-side">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
 
-    <div class="slide">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
+    <div class="gallery">
+      <div class="slide active">
+        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
+      </div>
+
+      <div class="slide">
+        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
+      </div>
+
+      <div class="slide">
+        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
+      </div>
     </div>
   </div>
 
