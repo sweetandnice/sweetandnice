@@ -15,7 +15,6 @@
       color: white;
     }
 
-    /* Layout for portrait + both galleries */
     .side-by-side {
       display: flex;
       align-items: flex-start;
@@ -31,6 +30,10 @@
       color: white;
       font-size: 20px;
       margin-top: 8px;
+    }
+
+    .gallery-block {
+      display: inline-block;
     }
 
     .gallery {
@@ -53,10 +56,18 @@
     }
 
     .caption {
-      color: #ff008f;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
       font-size: 18px;
       margin: 8px 0 20px 0;
       text-align: left;
+    }
+
+    #caption1 {
+      color: #ff008f;
+    }
+
+    #caption2 {
+      color: #fff100;
     }
   </style>
 </head>
@@ -65,14 +76,12 @@
 
   <div class="side-by-side">
 
-    <!-- Portrait + caption -->
     <div class="portrait-block">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
       <p class="portrait-caption">I enjoy making art ^-^</p>
     </div>
 
-    <!-- Gallery 1 -->
-    <div>
+    <div class="gallery-block">
       <div class="gallery" id="gallery1">
         <div class="slide active">
           <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
@@ -90,8 +99,7 @@
       <p class="caption" id="caption1"></p>
     </div>
 
-    <!-- Gallery 2 (with two slides now) -->
-    <div>
+    <div class="gallery-block">
       <div class="gallery" id="gallery2">
 
         <div class="slide active">
@@ -114,7 +122,6 @@
   </p>
 
   <script>
-    /* GALLERY 1 */
     let index1 = 0;
     const slides1 = document.querySelectorAll('#gallery1 .slide');
     const captions1 = [
@@ -133,7 +140,6 @@
     }
     setInterval(next1, 3000);
 
-    /* GALLERY 2 */
     let index2 = 0;
     const slides2 = document.querySelectorAll('#gallery2 .slide');
     const captions2 = [
