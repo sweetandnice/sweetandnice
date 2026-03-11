@@ -15,6 +15,7 @@
       color: white;
     }
 
+    /* Layout for portrait + both galleries */
     .side-by-side {
       display: flex;
       align-items: flex-start;
@@ -26,21 +27,12 @@
       text-align: left;
     }
 
-    .portrait-caption {
-      color: white;
-      font-size: 20px;
-      margin-top: 8px;
-    }
-
-    /* Captions match image width */
+    /* NEW: wrapper that defines width for image + caption */
     .gallery-block {
       display: inline-block;
     }
 
-    .gallery {
-      display: inline-block;
-    }
-
+    /* Hide all slides but keep them from affecting width */
     .slide {
       display: none;
     }
@@ -49,33 +41,35 @@
       display: block;
     }
 
-    /* Default gallery border (pink for gallery 1) */
-    .gallery img {
+    /* Default border (pink for gallery 1) */
+    .gallery-block img {
       height: 350px;
       width: auto;
       border: 4px solid #ff008f;
       display: block;
     }
 
-    /* Gallery 2 border override */
+    /* Gallery 2 border override (yellow) */
     #gallery2 img {
       border-color: #fff100;
     }
 
+    /* Comic Sans captions */
     .caption {
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       font-size: 18px;
       margin: 8px 0 20px 0;
       text-align: left;
       display: block;
+      width: fit-content; /* ensures caption matches image width */
     }
 
-    /* Gallery 1 caption color (pink) */
+    /* Gallery 1 caption color */
     #caption1 {
       color: #ff008f;
     }
 
-    /* Gallery 2 caption color (yellow) */
+    /* Gallery 2 caption color */
     #caption2 {
       color: #fff100;
     }
@@ -86,16 +80,14 @@
 
   <div class="side-by-side">
 
-    <!-- Portrait + caption -->
+    <!-- Portrait -->
     <div class="portrait-block">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
-      <p class="portrait-caption">I enjoy making art ^-^</p> <a href="artists-i-like.html">Artists I Like</a>
-  </p>
     </div>
 
     <!-- Gallery 1 -->
     <div class="gallery-block">
-      <div class="gallery" id="gallery1">
+      <div id="gallery1">
         <div class="slide active">
           <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
         </div>
@@ -109,13 +101,12 @@
         </div>
       </div>
 
-      <!-- Caption INSIDE the block so it matches width -->
       <p class="caption" id="caption1"></p>
     </div>
 
     <!-- Gallery 2 -->
     <div class="gallery-block">
-      <div class="gallery" id="gallery2">
+      <div id="gallery2">
 
         <div class="slide active">
           <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
@@ -127,11 +118,16 @@
 
       </div>
 
-      <!-- Caption INSIDE the block so it matches width -->
       <p class="caption" id="caption2"></p>
     </div>
 
   </div>
+
+  <!-- Inline text like your index page -->
+  <p>
+    I enjoy making art ^-^ — 
+    <a href="artists-i-like.html">Artists I Like</a>
+  </p>
 
   <script>
     /* GALLERY 1 */
