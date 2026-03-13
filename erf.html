@@ -52,6 +52,7 @@
     border: 2px solid #00ffff;
   }
 
+  /* Hidden by default — only appears on mobile */
   .gif-mobile {
     display: none;
   }
@@ -59,7 +60,7 @@
   /* MOBILE ONLY */
   @media (max-width: 600px) {
 
-    /* HEADER FIX — full width, no cropping */
+    /* HEADER FIX — full width, no cropping, no giant height */
     .header {
       padding: 0;
     }
@@ -76,27 +77,45 @@
       display: none;
     }
 
-    /* Show mobile GIF */
-    .gif-mobile {
-      display: block;
-    }
-
-    /* GIF + Venn side-by-side, equal width */
-    .gif-venn-row {
+    /* TEXT + GIF side-by-side */
+    .text-gif-row {
       display: flex;
-      width: 100%;
-      gap: 10px;
+      gap: 12px;
       padding: 12px;
+      align-items: flex-start;
       box-sizing: border-box;
     }
 
-    .gif-venn-row img {
-      width: 50%;
+    .text-gif-row p {
+      width: 60%;
+      margin: 0;
+    }
+
+    .text-gif-row .gif-mobile {
+      display: block;
+      width: 40%;
+    }
+
+    .text-gif-row .gif-mobile img {
+      width: 100%;
       height: auto;
       object-fit: contain;
     }
 
-    /* Cooltext GIF too wide — fix */
+    /* Venn diagram full width */
+    .venn-full {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .venn-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Cooltext GIF sizing */
     .cooltext {
       width: 100%;
       max-width: 350px;
@@ -116,16 +135,20 @@
     <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
   </div>
 
-  <p>
-    I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
-  </p>
+  <!-- TEXT + GIF (mobile only layout) -->
+  <div class="text-gif-row">
+    <p>
+      I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
+    </p>
 
-  <!-- MOBILE GIF + VENN ROW -->
-  <div class="gif-venn-row">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
     <div class="gif-mobile">
       <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
     </div>
+  </div>
+
+  <!-- VENN DIAGRAM FULL WIDTH -->
+  <div class="venn-full">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
   </div>
 
   <img class="cooltext" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif">
