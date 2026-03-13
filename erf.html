@@ -57,26 +57,31 @@
   }
 
   /* MOBILE ONLY */
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
 
-    /* HEADER FIX — full width, no cropping, no giant height */
-    .header {
-      display: block;
-      padding: 0;
-    }
+  .header {
+    display: block;
+    padding: 0;
+  }
 
-    .header-img {
-      content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
-      width: 100%;
-      height: auto;
-      max-height: 180px;   /* slightly wider but not tall */
-      object-fit: contain;
-      display: block;
-    }
+  .header-img {
+    content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
+    width: 100%;
+    height: auto;
+    max-height: none;     /* remove the cap */
+    object-fit: contain;
+    display: block;
+  }
 
-    .header .gif {
-      display: none;
-    }
+  /* override desktop height rule */
+  .header img {
+    height: auto !important;
+  }
+
+  .header .gif {
+    display: none;
+  }
+}
 
     /* TEXT WRAPS AROUND GIF */
     .text-gif-row {
