@@ -26,13 +26,11 @@
       text-align: left;
     }
 
-    /* NEW: wrapper that defines width for image + caption */
     .gallery-block {
       display: inline-block;
-      flex: 0 0 auto; /* prevents stretching */
+      flex: 0 0 auto; 
     }
 
-    /* Hide all slides but keep them from affecting width */
     .slide {
       display: none;
     }
@@ -53,23 +51,20 @@
       border-color: #fff100;
     }
 
-    /* Comic Sans captions */
     .caption {
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       font-size: 18px;
       margin: 8px 0 20px 0;
       text-align: left;
       display: block;
-      width: 300px;        /* match the image width exactly */
+      width: 300px;
       word-wrap: break-word;
     }
 
-    /* Gallery 1 caption color */
     #caption1 {
       color: #ff008f;
     }
 
-    /* Gallery 2 caption color */
     #caption2 {
       color: #fff100;
     }
@@ -77,13 +72,16 @@
 </head>
 
 <body>
+  <p>
+    I enjoy making art ^-^ —
+    <a href="artists-i-like.html">Artists I Like</a>
+  </p>
+
+  <div class="portrait-block">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
+  </div>
 
   <div class="side-by-side">
-
-    <!-- Portrait -->
-    <div class="portrait-block">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="300">
-    </div>
 
     <!-- Gallery 1 -->
     <div class="gallery-block">
@@ -123,12 +121,7 @@
 
   </div>
 
-  <!-- Inline text like your index page -->
-  <p>
-    I enjoy making art ^-^ — 
-    <a href="artists-i-like.html">Artists I Like</a>
-  </p>
-
+  <!-- your JS stays the same -->
   <script>
     /* GALLERY 1 */
     let index1 = 0;
@@ -169,4 +162,3 @@
   </script>
 
 </body>
-</html>
