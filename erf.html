@@ -56,12 +56,30 @@
     display: none;
   }
 
-  /* DESKTOP VENN SIZE */
   .venn-full img {
     width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
+  }
+
+  .venn-desktop-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .venn-column {
+    width: 400px; 
+  }
+
+  .venn-caption {
+    width: 100%;
+    text-align: center;
+    line-height: 1.3;
+    margin-top: 8px;
   }
 
   /* MOBILE LAYOUT */
@@ -119,11 +137,23 @@
       clear: both;
     }
 
-    /* MOBILE VENN SIZE */
     .venn-full img {
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    .venn-desktop-row {
+      display: block;
+    }
+
+    .venn-column {
+      width: 100%;
+    }
+
+    .venn-caption {
+      width: 100%;
+      text-align: left;
     }
 
     .cooltext {
@@ -155,25 +185,31 @@
 
     <p>
       Our current lifestyle under globalized capitalism is fundamentally unsustainable because it depends on the constant devaluing of labor and the environment. It only survives by externalizing the costs of its model of infinite growth—geographically by relocating production to places where labor is kept precarious through political repression and foreign‑backed ‘pro‑market’ regimes, and environmentally by degrading the ecosystem services it relies on. In 1997, Robert Costanza 
-  <a href="https://www.robertcostanza.com/wp-content/uploads/2017/02/1997_J_Costanza_Nature.pdf" target="_blank" rel="noopener">
-    attempted to calculate the global monetary value of all ecosystem services
-  </a>, 
-  which he estimated at $33 trillion per year (more than global GDP at the time).
-</p>
+      <a href="https://www.robertcostanza.com/wp-content/uploads/2017/02/1997_J_Costanza_Nature.pdf" target="_blank" rel="noopener">
+        attempted to calculate the global monetary value of all ecosystem services
+      </a>, 
+      which he estimated at $33 trillion per year—more than global GDP at the time.
+    </p>
   </div>
 
-  <div class="venn-full">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
+  <div class="venn-desktop-row">
+
+    <div class="venn-column">
+      <div class="venn-full">
+        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
+      </div>
+
+      <p class="venn-caption">
+        My climate action Venn diagram inspired by 
+        <a href="https://www.youtube.com/watch?v=VsOJR40M0as" target="_blank" rel="noopener">
+          Ayana Elizabeth Johnson’s TED talk
+        </a>
+      </p>
+    </div>
+
+    <img class="cooltext" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif">
+
   </div>
-
-  <p>
-    My climate action Venn diagram inspired by 
-    <a href="https://www.youtube.com/watch?v=VsOJR40M0as" target="_blank" rel="noopener">
-      Ayana Elizabeth Johnson’s TED talk
-    </a>
-  </p>
-
-  <img class="cooltext" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif">
 
 </body>
 </html>
