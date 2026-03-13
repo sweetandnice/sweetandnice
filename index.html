@@ -8,8 +8,10 @@
   <style>
     body {
       background-color: black;
+      margin: 0;
+      padding: 0;
     }
-    
+
     @font-face {
       font-family: "Bradthen";
       src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
@@ -20,8 +22,7 @@
       font-size: 175px;
       font-weight: normal;
       color: #cdebf9;
-      margin-bottom: 0;
-      margin-top: 0;
+      margin: 0;
     }
 
     p {
@@ -29,17 +30,12 @@
       margin-top: 0;
       color: #0000ff;
     }
-    
-    .header {
-      display: flex;
-      align-items: center;
-    }
-    
+
     .header-img {
       width: 100%;
-      max-width: 1200px;
       height: auto;
       display: block;
+      content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/indexheader.png");
     }
 
     @media (max-width: 768px) {
@@ -50,17 +46,24 @@
       p {
         font-size: 16px;
       }
+
+      .header-img {
+        content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-mobile.png");
+      }
     }
   </style>
 </head>
 
 <body>
-  <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header2.png">
-  
-  <p>My Name Is Eva Ruth.
-    <a href="art.html">I draw and paint</a> and <a href="erf.html">I love Earth</a>. This is extra memory space to store my thoughts and document my life. 
-  </p>
-  
-</body>
 
+  <img class="header-img">
+
+  <p>
+    My Name Is Eva Ruth.
+    <a href="art.html">I draw and paint</a> and
+    <a href="erf.html">I love Earth</a>.
+    This is extra memory space to store my thoughts and document my life.
+  </p>
+
+</body>
 </html>
