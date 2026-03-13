@@ -60,33 +60,41 @@
   /* MOBILE ONLY */
   @media (max-width: 600px) {
 
-    /* Swap header image */
+    .header {
+      padding: 0;
+    }
+
     .header-img {
       content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
-      height: 120px;
+      width: 100%;
+      height: auto;
     }
 
-    /* Shrink GIF */
-    .gif {
-      height: 80px;
-    }
-
-    /* Hide GIF in header on mobile */
+    /* Hide GIF in header */
     .header .gif {
       display: none;
     }
 
-    /* Show mobile GIF next to Venn */
+    /* Show mobile GIF */
     .gif-mobile {
       display: block;
     }
 
-    /* Put Venn + mobile GIF side by side */
+    /* GIF + Venn side-by-side */
     .gif-venn-row {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
+      width: 100%;
       padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .gif-venn-row img {
+      height: 150px;      /* adjust if you want them taller/shorter */
+      width: auto;
+      object-fit: contain;
     }
   }
 </style>
@@ -104,11 +112,9 @@
     I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
   </p>
 
-  <!-- VENN + MOBILE GIF ROW -->
+  <!-- MOBILE GIF + VENN ROW -->
   <div class="gif-venn-row">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg" width="400">
-
-    <!-- This GIF only appears on mobile -->
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
     <div class="gif-mobile">
       <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
     </div>
