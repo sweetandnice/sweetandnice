@@ -33,6 +33,7 @@
     color: #fff100;
   }
 
+  /* DESKTOP HEADER */
   .header {
     display: flex;
     align-items: center;
@@ -56,32 +57,31 @@
     display: none;
   }
 
-  /* MOBILE ONLY */
-@media (max-width: 600px) {
+  /* ------------------------------ */
+  /* 📱 MOBILE LAYOUT */
+  @media (max-width: 600px) {
+    .header {
+      display: block;
+      padding: 0;
+    }
 
-  .header {
-    display: block;
-    padding: 0;
-  }
+    .header-img {
+      content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
 
-  .header-img {
-    content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
-    width: 100%;
-    height: auto;
-    max-height: none;     /* remove the cap */
-    object-fit: contain;
-    display: block;
-  }
+    .header img {
+      height: auto !important;
+      width: 100% !important;
+    }
 
-  /* override desktop height rule */
-  .header img {
-    height: auto !important;
-  }
-
-  .header .gif {
-    display: none;
-  }
-}
+    /* hide desktop GIF */
+    .header .gif {
+      display: none;
+    }
 
     /* TEXT WRAPS AROUND GIF */
     .text-gif-row {
@@ -95,8 +95,8 @@
 
     .gif-mobile {
       display: block;
-      float: right;          /* <-- makes text wrap around it */
-      width: 40%;            /* same size as before */
+      float: right;
+      width: 40%;
       margin-left: 12px;
       margin-bottom: 8px;
     }
@@ -107,12 +107,12 @@
       object-fit: contain;
     }
 
-    /* Venn diagram full width */
+    /* VENN DIAGRAM FULL WIDTH */
     .venn-full {
       width: 100%;
       padding: 12px;
       box-sizing: border-box;
-      clear: both;           /* ensures it appears below wrapped text */
+      clear: both;
     }
 
     .venn-full img {
@@ -121,7 +121,7 @@
       display: block;
     }
 
-    /* Cooltext GIF sizing */
+    /* COOLTEXT GIF */
     .cooltext {
       width: 100%;
       max-width: 350px;
@@ -135,13 +135,11 @@
 
 <body>
 
-  <!-- HEADER -->
   <div class="header">
     <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf.png">
     <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
   </div>
 
-  <!-- TEXT WITH WRAPPED GIF -->
   <div class="text-gif-row">
     <div class="gif-mobile">
       <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
@@ -152,7 +150,6 @@
     </p>
   </div>
 
-  <!-- VENN DIAGRAM FULL WIDTH -->
   <div class="venn-full">
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg">
   </div>
