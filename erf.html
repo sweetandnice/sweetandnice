@@ -61,16 +61,16 @@
 
     /* HEADER FIX — full width, no cropping, no giant height */
     .header {
-      display: block;      /* stop flex from stretching it */
+      display: block;
       padding: 0;
     }
 
     .header-img {
       content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
-      width: 100%;         /* full width */
-      height: auto;        /* keep proportions */
-      max-height: 200px;   /* prevents giant header */
-      object-fit: contain; /* no cropping */
+      width: 100%;
+      height: auto;
+      max-height: 180px;   /* slightly wider but not tall */
+      object-fit: contain;
       display: block;
     }
 
@@ -78,26 +78,25 @@
       display: none;
     }
 
-    /* TEXT + GIF side-by-side */
+    /* TEXT WRAPS AROUND GIF */
     .text-gif-row {
-      display: flex;
-      gap: 12px;
       padding: 12px;
-      align-items: flex-start;
       box-sizing: border-box;
     }
 
     .text-gif-row p {
-      width: 60%;
       margin: 0;
     }
 
-    .text-gif-row .gif-mobile {
+    .gif-mobile {
       display: block;
-      width: 40%;
+      float: right;          /* <-- makes text wrap around it */
+      width: 40%;            /* same size as before */
+      margin-left: 12px;
+      margin-bottom: 8px;
     }
 
-    .text-gif-row .gif-mobile img {
+    .gif-mobile img {
       width: 100%;
       height: auto;
       object-fit: contain;
@@ -108,6 +107,7 @@
       width: 100%;
       padding: 12px;
       box-sizing: border-box;
+      clear: both;           /* ensures it appears below wrapped text */
     }
 
     .venn-full img {
@@ -136,15 +136,15 @@
     <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
   </div>
 
-  <!-- TEXT + GIF (mobile only layout) -->
+  <!-- TEXT WITH WRAPPED GIF -->
   <div class="text-gif-row">
-    <p>
-      I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
-    </p>
-
     <div class="gif-mobile">
       <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
     </div>
+
+    <p>
+      I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
+    </p>
   </div>
 
   <!-- VENN DIAGRAM FULL WIDTH -->
