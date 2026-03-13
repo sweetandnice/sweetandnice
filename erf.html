@@ -5,62 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I love Earth</title>
 
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      margin: 0;
-      padding: 0;
+<style>
+  body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  @font-face {
+    font-family: "Pinyon";
+    src: url("fonts/PinyonScript-Regular.ttf") format("opentype");
+  }
+
+  h1 {
+    font-family: "Bradthen";
+    font-size: 200px;
+    font-weight: normal;
+    color: #cdebf9;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 0;
+    color: #fff100;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    overflow: hidden;
+  }
+
+  .header img {
+    height: 350px;
+    width: auto;
+    flex-shrink: 1;
+    display: block;
+  }
+
+  .gif {
+    border: 2px solid #00ffff;
+  }
+
+  /* Hidden by default — only appears on mobile */
+  .gif-mobile {
+    display: none;
+  }
+
+  /* MOBILE ONLY */
+  @media (max-width: 600px) {
+
+    /* Swap header image */
+    .header-img {
+      content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
+      height: 120px;
     }
 
-    @font-face {
-      font-family: "Pinyon";
-      src: url("fonts/PinyonScript-Regular.ttf") format("opentype");
+    /* Shrink GIF */
+    .gif {
+      height: 80px;
     }
 
-    h1 {
-      font-family: "Bradthen";
-      font-size: 200px;
-      font-weight: normal;
-      color: #cdebf9;
-      margin-bottom: 0;
-      margin-top: 0;
+    /* Hide GIF in header on mobile */
+    .header .gif {
+      display: none;
     }
 
-    p {
-      font-size: 20px;
-      margin-top: 0;
-      color: #fff100;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px;
-      overflow: hidden; /* prevents scrollbars */
-    }
-
-    .header img {
-      height: 350px;   /* adjust this number to taste */
-      width: auto;
-      flex-shrink: 1;  /* allows them to shrink on small screens */
+    /* Show mobile GIF next to Venn */
+    .gif-mobile {
       display: block;
     }
 
-    .gif {
-      border: 2px solid #00ffff;
+    /* Put Venn + mobile GIF side by side */
+    .gif-venn-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 12px;
     }
-
-    @media (max-width: 600px) {
-      .header img {
-        height: 100px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <div class="header">
     <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf.png">
     <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
@@ -70,10 +104,24 @@
     I love Earth because it is a perfect self-contained cycle and it's all we have. As William Shatner tearfully attempted to express to Jeff Bezos after his trip to space (before Bezos dismissed him to celebrate with champagne), "The jeopardy, the moment you feel that vulnerability. This air which is keeping us alive is thinner than your skin. It’s a sliver, immeasurably small when you think in terms of the universe. Mars doesn’t really have it. There is life, and then there’s death."
   </p>
 
-  <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg" width="400">
+  <!-- VENN + MOBILE GIF ROW -->
+  <div class="gif-venn-row">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/venn.jpg" width="400">
+
+    <!-- This GIF only appears on mobile -->
+    <div class="gif-mobile">
+      <img class="gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/biolum.gif">
+    </div>
+  </div>
+
   <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif" width="500">
-  <p> My climate action Venn diagram inspired by <a href="https://www.youtube.com/watch?v=VsOJR40M0as" target="_blank" rel="noopener"> Ayana Elizabeth Johnson’s TED talk</a>
+
+  <p>
+    My climate action Venn diagram inspired by 
+    <a href="https://www.youtube.com/watch?v=VsOJR40M0as" target="_blank" rel="noopener">
+      Ayana Elizabeth Johnson’s TED talk
+    </a>
   </p>
-  
+
 </body>
 </html>
