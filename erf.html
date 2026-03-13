@@ -52,7 +52,6 @@
     border: 2px solid #00ffff;
   }
 
-  /* Hidden by default — only appears on mobile */
   .gif-mobile {
     display: none;
   }
@@ -62,17 +61,19 @@
 
     /* HEADER FIX — full width, no cropping, no giant height */
     .header {
+      display: block;      /* stop flex from stretching it */
       padding: 0;
     }
 
     .header-img {
       content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
-      width: 100%;
-      height: auto;
+      width: 100%;         /* full width */
+      height: auto;        /* keep proportions */
+      max-height: 200px;   /* prevents giant header */
+      object-fit: contain; /* no cropping */
       display: block;
     }
 
-    /* Hide desktop GIF in header */
     .header .gif {
       display: none;
     }
