@@ -52,7 +52,6 @@
     border: 2px solid #00ffff;
   }
 
-  /* Hidden by default — only appears on mobile */
   .gif-mobile {
     display: none;
   }
@@ -60,6 +59,7 @@
   /* MOBILE ONLY */
   @media (max-width: 600px) {
 
+    /* HEADER FIX — full width, no cropping */
     .header {
       padding: 0;
     }
@@ -68,9 +68,10 @@
       content: url("https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/header-erf-mobile.png");
       width: 100%;
       height: auto;
+      display: block;
     }
 
-    /* Hide GIF in header */
+    /* Hide desktop GIF in header */
     .header .gif {
       display: none;
     }
@@ -80,21 +81,28 @@
       display: block;
     }
 
-    /* GIF + Venn side-by-side */
+    /* GIF + Venn side-by-side, equal width */
     .gif-venn-row {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
       width: 100%;
+      gap: 10px;
       padding: 12px;
       box-sizing: border-box;
     }
 
     .gif-venn-row img {
-      height: 150px;      /* adjust if you want them taller/shorter */
-      width: auto;
+      width: 50%;
+      height: auto;
       object-fit: contain;
+    }
+
+    /* Cooltext GIF too wide — fix */
+    .cooltext {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
   }
 </style>
@@ -120,7 +128,7 @@
     </div>
   </div>
 
-  <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif" width="500">
+  <img class="cooltext" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/cooltext504095448553700.gif">
 
   <p>
     My climate action Venn diagram inspired by 
