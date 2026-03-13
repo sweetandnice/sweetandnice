@@ -15,7 +15,6 @@
       color: white;
     }
 
-    /* Layout for portrait + both galleries */
     .side-by-side {
       display: flex;
       align-items: flex-start;
@@ -30,6 +29,7 @@
     /* NEW: wrapper that defines width for image + caption */
     .gallery-block {
       display: inline-block;
+      flex: 0 0 auto; /* prevents stretching */
     }
 
     /* Hide all slides but keep them from affecting width */
@@ -43,12 +43,11 @@
 
     /* Default border (pink for gallery 1) */
     .gallery-block img {
-      height: 350px;
-      width: auto;
+      width: 300px;   /* NEW: fixes the width */
+      height: auto;   /* keeps proportions */
       border: 4px solid #ff008f;
       display: block;
-    }
-
+}
     /* Gallery 2 border override (yellow) */
     #gallery2 img {
       border-color: #fff100;
@@ -61,7 +60,8 @@
       margin: 8px 0 20px 0;
       text-align: left;
       display: block;
-      width: fit-content; /* ensures caption matches image width */
+      width: 300px;        /* match the image width exactly */
+      word-wrap: break-word;
     }
 
     /* Gallery 1 caption color */
