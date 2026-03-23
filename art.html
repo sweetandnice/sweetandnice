@@ -49,9 +49,16 @@
       margin-bottom: 20px;
     }
 
+    /* DESKTOP GALLERIES */
     .galleries-row {
       display: flex;
+      flex-direction: row;
       gap: 30px;
+      align-items: flex-start;
+    }
+
+    .gallery-block {
+      flex-shrink: 0;
     }
 
     /* GALLERY IMAGE SIZING */
@@ -86,7 +93,7 @@
       margin-top: 20px;
     }
 
-    /* MOBILE LAYOUT */
+    /* 📱 MOBILE LAYOUT */
     @media (max-width: 700px) {
 
       /* Portrait + text side-by-side */
@@ -116,7 +123,7 @@
         margin: 0;
       }
 
-      /* Galleries stack below */
+      /* MOBILE — galleries stack vertically */
       .galleries-row {
         flex-direction: column;
         width: 100%;
@@ -133,7 +140,7 @@
 
 <body>
 
-  <!-- TOP SECTION: PORTRAIT LEFT, TEXT + GALLERIES RIGHT -->
+  <!-- 🌸 TOP SECTION: PORTRAIT LEFT, TEXT + GALLERIES RIGHT -->
   <div class="top-layout">
 
     <!-- PORTRAIT -->
