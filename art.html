@@ -25,7 +25,7 @@
     /* DESKTOP TOP LAYOUT */
     .top-layout {
       display: flex;
-      align-items: flex-start; /* aligns text with top of portrait */
+      align-items: flex-start;
       gap: 30px;
       margin: 20px;
     }
@@ -55,9 +55,21 @@
     .intro-line {
       font-size: 22px;
       color: white;
-      margin-top: 0; /* aligns text with top of portrait */
+      margin-top: 0;
       margin-bottom: 20px;
     }
+
+    /* GALLERY LABELS */
+    .gallery-label {
+      font-family: "Comic Sans MS", "Comic Sans";
+      font-size: 20px;
+      margin: 0 0 6px 0;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .pink-label { color: #ff008f; }
+    .yellow-label { color: #fff100; }
 
     /* DESKTOP GALLERIES */
     .galleries-row {
@@ -85,11 +97,11 @@
       display: block;
     }
 
-    /* GALLERY IMAGES — bigger now (360px tall) */
+    /* GALLERY IMAGES — bigger (360px tall) */
     .gallery-block img {
       width: 100%;
       max-width: 300px;
-      height: 360px; /* increased size */
+      height: 360px;
       object-fit: contain;
       border: 4px solid #ff008f;
       background-color: black;
@@ -100,14 +112,14 @@
       border-color: #fff100;
     }
 
-    /* CAPTIONS — wrap naturally at image width */
+    /* CAPTIONS — wrap naturally */
     .caption {
       font-family: "Comic Sans MS", "Comic Sans";
       font-size: 14px;
       margin: 8px 0 0 0;
       color: white;
       width: 100%;
-      max-width: 300px; /* matches image width */
+      max-width: 300px;
       white-space: normal;
       overflow: visible;
     }
@@ -122,7 +134,26 @@
       margin-top: 20px;
     }
 
-    /* 📱 MOBILE LAYOUT */
+    /* LOWER SECTION — side-by-side layout */
+    .side-by-side {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin: 20px;
+    }
+
+    .screenshot-block img {
+      width: 400px;
+      height: auto;
+      display: block;
+    }
+
+    .text-block {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* MOBILE LAYOUT */
     @media (max-width: 700px) {
 
       .top-layout {
@@ -169,13 +200,21 @@
       .caption {
         max-width: none;
       }
+
+      .side-by-side {
+        flex-direction: column;
+      }
+
+      .screenshot-block img {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🌸 TOP SECTION -->
+  <!--  TOP SECTION -->
   <div class="top-layout">
 
     <div class="portrait-column">
@@ -192,6 +231,8 @@
       <div class="galleries-row">
 
         <div class="gallery-block">
+          <p class="gallery-label pink-label">Studies:</p>
+
           <div id="gallery1">
 
             <div class="slide active">
@@ -212,6 +253,8 @@
         </div>
 
         <div class="gallery-block">
+          <p class="gallery-label yellow-label">Sketches:</p>
+
           <div id="gallery2">
 
             <div class="slide active">
@@ -239,10 +282,11 @@
 
   <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/project3.png">
 
-  <div class="side-by-side" style="margin: 20px; gap: 30px;">
+  <!-- LOWER SECTION -->
+  <div class="side-by-side">
 
     <div class="screenshot-block">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202026-03-22%20194435.png" width="400">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202026-03-22%20194435.png">
     </div>
 
     <div class="text-block">
