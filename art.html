@@ -42,7 +42,7 @@
 
     .right-column {
       flex: 1;
-      min-width: 0; /* allows galleries to shrink */
+      min-width: 0;
       display: flex;
       flex-direction: column;
     }
@@ -57,19 +57,28 @@
     .galleries-row {
       display: flex;
       gap: 30px;
-      flex-wrap: nowrap; /* prevents stacking */
+      flex-wrap: nowrap;
       min-width: 0;
     }
 
     .gallery-block {
-      flex: 1; /* allows shrinking */
-      min-width: 0; /* prevents overflow */
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* SLIDESHOW FIX — THIS IS WHAT YOU WERE MISSING */
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
     }
 
     /* FLEXIBLE GALLERY IMAGES */
     .gallery-block img {
       width: 100%;
-      max-width: 300px; /* keeps your aesthetic */
+      max-width: 300px;
       height: auto;
       object-fit: contain;
       border: 4px solid #ff008f;
