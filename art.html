@@ -44,11 +44,14 @@
       display: block;
     }
 
+    /* FIXED HEIGHT GALLERY IMAGES */
     .gallery-block img {
       width: 300px;
-      height: auto;
+      height: 250px;        /* consistent height */
+      object-fit: contain;  /* keeps full artwork visible */
       border: 4px solid #ff008f;
       display: block;
+      background-color: black; /* prevents white gaps */
     }
 
     #gallery2 img {
@@ -72,6 +75,25 @@
     #caption2 {
       color: #fff100;
     }
+
+    /* MOBILE LAYOUT */
+    @media (max-width: 700px) {
+      .side-by-side {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .gallery-block img {
+        width: 80%;
+        height: 180px; /* smaller on mobile */
+      }
+
+      .portrait-block img {
+        width: 80%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -81,6 +103,7 @@
     I have always enjoyed making art ^-^ I am inspired by 
     <a href="artists-i-like.html">artists I like</a> and things I see.
   </p>
+
   <div class="side-by-side">
 
     <div class="portrait-block">
@@ -132,6 +155,7 @@
   </div>
   
   <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/projects.png">
+
   <script>
     /* GALLERY 1 */
     let index1 = 0;
