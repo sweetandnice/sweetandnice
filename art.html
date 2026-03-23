@@ -115,7 +115,9 @@
       }
 
       .right-column {
-        flex: 1;
+        width: 740px; /* enough room for both galleries */
+        display: flex;
+        flex-direction: column;
       }
 
       .intro-line {
@@ -126,10 +128,12 @@
 
       /* MOBILE — galleries stack vertically */
       .galleries-row {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: nowrap; /* prevents stacking */
       }
+
 
       .gallery-block img {
         width: 100%;
