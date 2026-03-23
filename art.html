@@ -29,21 +29,18 @@
       margin: 20px;
     }
 
-    .text-block {
-      max-width: 600px;
-    }
-
-    .full-width {
-      width: 100%;
-      height: auto;
-      display: block;
+    .centered-text {
+      text-align: center;
       margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 22px;
     }
 
     .portrait-block img {
-      width: 250px;
+      width: 320px; /* bigger photo */
       height: auto;
       display: block;
+      margin: 0 auto;
     }
 
     .gallery-block {
@@ -90,6 +87,13 @@
       color: #fff100;
     }
 
+    .full-width {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 20px;
+    }
+
     /* MOBILE LAYOUT */
     @media (max-width: 700px) {
       .side-by-side {
@@ -106,34 +110,24 @@
       .portrait-block img {
         width: 80%;
       }
-
-      .text-block {
-        width: 90%;
-        text-align: left;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- TOP SECTION: portrait left, intro text right -->
-  <div class="side-by-side">
+  <!-- ONE-LINE INTRO TEXT -->
+  <p class="centered-text">
+    I have always enjoyed making art ^-^ I am inspired by 
+    <a href="artists-i-like.html">artists I like</a> and things I see.
+  </p>
 
-    <div class="portrait-block">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
-    </div>
-
-    <div class="text-block">
-      <p>
-        I have always enjoyed making art ^-^ I am inspired by 
-        <a href="artists-i-like.html">artists I like</a> and things I see.
-      </p>
-    </div>
-
+  <!-- PORTRAIT BELOW TEXT -->
+  <div class="portrait-block">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
   </div>
 
-  <!-- GALLERIES ROW -->
+  <!-- GALLERIES BELOW PORTRAIT -->
   <div class="side-by-side">
 
     <!-- Gallery 1 -->
@@ -183,7 +177,7 @@
   <!-- FULL-WIDTH HEADER IMAGE -->
   <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/project3.png">
 
-  <!-- SIPHONOPHORE SECTION: screenshot left, text right -->
+  <!-- SIPHONOPHORE SECTION -->
   <div class="side-by-side">
 
     <div class="screenshot-block">
