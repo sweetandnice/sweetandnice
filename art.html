@@ -8,17 +8,25 @@
   <style>
     body {
       background-color: black;
+      margin: 0;
+      padding: 0;
     }
 
     p {
       font-size: 20px;
       color: white;
+      line-height: 1.5;
+    }
+
+    a {
+      color: #ff9be6;
     }
 
     .side-by-side {
       display: flex;
       align-items: flex-start;
       gap: 30px;
+      margin: 20px;
     }
 
     .text-block {
@@ -29,11 +37,13 @@
       width: 100%;
       height: auto;
       display: block;
+      margin-top: 20px;
     }
 
-    .portrait-block {
-      flex-shrink: 0;
-      text-align: left;
+    .portrait-block img {
+      width: 250px;
+      height: auto;
+      display: block;
     }
 
     .gallery-block {
@@ -85,7 +95,7 @@
       .side-by-side {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        text-align: center;
       }
 
       .gallery-block img {
@@ -95,11 +105,11 @@
 
       .portrait-block img {
         width: 80%;
-        height: auto;
       }
 
       .text-block {
         width: 90%;
+        text-align: left;
       }
     }
   </style>
@@ -107,11 +117,11 @@
 
 <body>
 
-  <!-- NEW FLEX ROW: portrait on left, text on right -->
+  <!-- TOP SECTION: portrait left, intro text right -->
   <div class="side-by-side">
 
     <div class="portrait-block">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" width="250">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
     </div>
 
     <div class="text-block">
@@ -119,18 +129,11 @@
         I have always enjoyed making art ^-^ I am inspired by 
         <a href="artists-i-like.html">artists I like</a> and things I see.
       </p>
-
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202026-03-22%20194435.png" width="400">
-
-      <p>
-        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
-        In my final piece, I used pens, markers, colored pencils, and acrylic paint. I put the feather hanging off the side of the canvas, blending into the black center of the tree rings. I chose to keep the text in Hindi as a stylistic and symbolic choice. However, because of my unfamiliarity with the script, I ended up having to clean it back up and re-do it. While there were elements of the original piece that I like, the acrylic paint and sloppy typography cheapened the whole thing for me.
-      </p>
     </div>
 
   </div>
 
-  <!-- GALLERIES BELOW -->
+  <!-- GALLERIES ROW -->
   <div class="side-by-side">
 
     <!-- Gallery 1 -->
@@ -177,7 +180,24 @@
 
   </div>
 
+  <!-- FULL-WIDTH HEADER IMAGE -->
   <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/project3.png">
+
+  <!-- SIPHONOPHORE SECTION: screenshot left, text right -->
+  <div class="side-by-side">
+
+    <div class="screenshot-block">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202026-03-22%20194435.png" width="400">
+    </div>
+
+    <div class="text-block">
+      <p>
+        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
+        In my final piece, I used pens, markers, colored pencils, and acrylic paint. I put the feather hanging off the side of the canvas, blending into the black center of the tree rings. I chose to keep the text in Hindi as a stylistic and symbolic choice. However, because of my unfamiliarity with the script, I ended up having to clean it back up and re-do it. While there were elements of the original piece that I like, the acrylic paint and sloppy typography cheapened the whole thing for me.
+      </p>
+    </div>
+
+  </div>
 
   <script>
     /* GALLERY 1 */
