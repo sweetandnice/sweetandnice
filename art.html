@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About My Art</title>
 
+  <!-- Comic Neue (fallback only when Comic Sans fails) -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -24,7 +25,7 @@
       color: #ff9be6;
     }
 
-    /* DESKTOP TOP LAYOUT */
+    /* DESKTOP TOP LAYOUT (unchanged) */
     .top-layout {
       display: flex;
       align-items: flex-start;
@@ -132,15 +133,22 @@
     /* MOBILE LAYOUT — FINAL FIXED VERSION */
     @media (max-width: 700px) {
 
-      /* TOP: portrait + text side-by-side */
+      /* TOP SECTION becomes column */
       .top-layout {
+        flex-direction: column;
+        margin: 16px;
+        gap: 16px;
+      }
+
+      /* NEW: portrait + text side-by-side inside their own row */
+      .mobile-top-row {
+        display: flex;
         flex-direction: row;
         gap: 12px;
-        margin: 16px;
       }
 
       .portrait-column {
-        flex: 1.2;
+        flex: 0 0 45%; /* prevents shrinking */
       }
 
       .portrait-column img {
@@ -163,7 +171,6 @@
         flex-direction: row;
         gap: 12px;
         width: 100%;
-        margin-top: 8px;
       }
 
       .gallery-block {
@@ -205,8 +212,8 @@
 
       #printmaking-gallery img {
         width: 100%;
+        max-width: 100vw; /* hard clamp */
         height: auto;
-        max-width: 100%;
         display: block;
         transform: rotate(90deg);
       }
@@ -219,56 +226,59 @@
   <!-- TOP SECTION -->
   <div class="top-layout">
 
-    <div class="portrait-column">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
+    <!-- NEW MOBILE FLEX ROW -->
+    <div class="mobile-top-row">
+
+      <div class="portrait-column">
+        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
+      </div>
+
+      <div class="right-column">
+        <p class="intro-line">
+          I have always enjoyed making art ^-^ I am inspired by 
+          <a href="artists-i-like.html">artists I like</a> and things I see.
+        </p>
+      </div>
+
     </div>
 
-    <div class="right-column">
+    <!-- STUDIES + SKETCHES -->
+    <div class="galleries-row">
 
-      <p class="intro-line">
-        I have always enjoyed making art ^-^ I am inspired by 
-        <a href="artists-i-like.html">artists I like</a> and things I see.
-      </p>
+      <div class="gallery-block">
+        <p class="gallery-label pink-label">Studies:</p>
 
-      <!-- STUDIES + SKETCHES -->
-      <div class="galleries-row">
-
-        <div class="gallery-block">
-          <p class="gallery-label pink-label">Studies:</p>
-
-          <div id="gallery1">
-            <div class="slide active">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
-            </div>
+        <div id="gallery1">
+          <div class="slide active">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
           </div>
-
-          <p class="caption" id="caption1"></p>
+          <div class="slide">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
+          </div>
+          <div class="slide">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
+          </div>
         </div>
 
-        <div class="gallery-block">
-          <p class="gallery-label yellow-label">Sketches:</p>
+        <p class="caption" id="caption1"></p>
+      </div>
 
-          <div id="gallery2">
-            <div class="slide active">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-07-19%20103336.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Cow%20painting.png">
-            </div>
+      <div class="gallery-block">
+        <p class="gallery-label yellow-label">Sketches:</p>
+
+        <div id="gallery2">
+          <div class="slide active">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
           </div>
-
-          <p class="caption" id="caption2"></p>
+          <div class="slide">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-07-19%20103336.png">
+          </div>
+          <div class="slide">
+            <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Cow%20painting.png">
+          </div>
         </div>
 
+        <p class="caption" id="caption2"></p>
       </div>
 
     </div>
@@ -282,7 +292,7 @@
 
     <div class="text-block">
       <p>
-        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us...
+        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself...
       </p>
     </div>
     
