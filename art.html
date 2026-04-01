@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About My Art</title>
 
+  <!-- Comic Neue (Comic Sans fallback for mobile) -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       background-color: black;
@@ -61,7 +64,7 @@
 
     /* GALLERY LABELS */
     .gallery-label {
-      font-family: "Comic Sans MS", "Comic Sans";
+      font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", cursive;
       font-size: 20px;
       margin: 0 0 2px 0;
       width: 100%;
@@ -118,7 +121,7 @@
 
     /* CAPTIONS */
     .caption {
-      font-family: "Comic Sans MS", "Comic Sans";
+      font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", cursive;
       font-size: 14px;
       margin: 8px 0 0 0;
       color: white;
@@ -161,14 +164,10 @@
     /* MOBILE LAYOUT */
     @media (max-width: 700px) {
 
+      /* STACK EVERYTHING IN TOP SECTION */
       .top-layout {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 15px;
-      }
-
-      .portrait-column {
-        flex: 2;
+        flex-direction: column;
+        gap: 20px;
       }
 
       .portrait-column img {
@@ -177,8 +176,6 @@
       }
 
       .right-column {
-        flex: 1;
-        width: auto;
         max-height: none;
         overflow: visible;
       }
@@ -189,10 +186,11 @@
         margin: 0;
       }
 
+      /* GALLERIES STACK UNDER TEXT */
       .galleries-row {
         flex-direction: column;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 10px;
         max-height: none;
       }
 
@@ -206,6 +204,7 @@
         max-width: none;
       }
 
+      /* LOWER SECTIONS STACK */
       .side-by-side {
         flex-direction: column;
       }
