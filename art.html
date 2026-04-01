@@ -32,11 +32,6 @@
       margin: 20px;
     }
 
-    /* PORTRAIT */
-    .portrait-column {
-      flex-shrink: 0;
-    }
-
     .portrait-column img {
       width: 380px;
       height: 500px;
@@ -44,7 +39,6 @@
       display: block;
     }
 
-    /* RIGHT COLUMN */
     .right-column {
       flex: 1;
       min-width: 0;
@@ -56,51 +50,37 @@
 
     .intro-line {
       font-size: 22px;
+      margin: 0 0 8px 0;
       color: white;
-      margin-top: 0;
-      margin-bottom: 8px;
     }
 
     /* GALLERY LABELS */
     .gallery-label {
       font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-      font-weight: 400; /* normal on desktop */
+      font-weight: 400; /* desktop normal */
       font-size: 20px;
       margin: 0 0 2px 0;
-      width: 100%;
-      max-width: 300px;
     }
 
     .pink-label { color: #ff008f; }
     .yellow-label { color: #fff100; }
 
-    /* DESKTOP GALLERIES (unchanged) */
+    /* DESKTOP GALLERIES */
     .galleries-row {
       display: flex;
       gap: 30px;
       flex-wrap: nowrap;
-      min-width: 0;
-      max-height: 100%;
     }
 
     .gallery-block {
       flex: 1;
-      min-width: 0;
       display: flex;
       flex-direction: column;
-      max-height: 100%;
     }
 
-    /* SLIDES */
-    .slide {
-      display: none;
-    }
+    .slide { display: none; }
+    .slide.active { display: block; }
 
-    .slide.active {
-      display: block;
-    }
-
-    /* GALLERY IMAGES */
     .gallery-block img {
       width: 100%;
       max-width: 300px;
@@ -108,28 +88,19 @@
       object-fit: contain;
       border: 4px solid #ff008f;
       background-color: black;
-      display: block;
     }
 
-    #gallery2 img {
-      border-color: #fff100;
-    }
+    #gallery2 img { border-color: #fff100; }
 
     #printmaking-gallery img {
       transform: rotate(90deg);
     }
 
-    /* CAPTIONS */
     .caption {
       font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-      font-weight: 400; /* normal on desktop */
+      font-weight: 400;
       font-size: 14px;
-      margin: 8px 0 0 0;
-      color: white;
-      width: 100%;
-      max-width: 300px;
-      white-space: normal;
-      overflow: visible;
+      margin-top: 8px;
     }
 
     #caption1 { color: #ff008f; }
@@ -145,7 +116,6 @@
     /* LOWER SECTION */
     .side-by-side {
       display: flex;
-      align-items: flex-start;
       gap: 30px;
       margin: 20px;
     }
@@ -153,22 +123,20 @@
     .screenshot-block img {
       width: 400px;
       height: auto;
-      display: block;
     }
 
     .text-block {
       flex: 1;
-      min-width: 0;
-      margin-top: 0;
     }
 
-    /* MOBILE LAYOUT FIXES */
+    /* MOBILE LAYOUT — FINAL FIXED VERSION */
     @media (max-width: 700px) {
 
+      /* TOP: portrait + text side-by-side */
       .top-layout {
         flex-direction: row;
-        align-items: flex-start;
-        gap: 15px;
+        gap: 12px;
+        margin: 16px;
       }
 
       .portrait-column {
@@ -183,20 +151,23 @@
       .right-column {
         flex: 1;
         max-height: none;
-        overflow: visible;
       }
 
       .intro-line {
         font-size: 16px;
         line-height: 1.3;
-        margin: 0;
       }
 
+      /* STUDIES + SKETCHES side-by-side on mobile */
       .galleries-row {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 12px;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 8px;
+      }
+
+      .gallery-block {
+        flex: 1;
       }
 
       .gallery-block img {
@@ -205,15 +176,13 @@
         max-width: none;
       }
 
-      .caption {
-        max-width: none;
-      }
-
+      /* Bold Comic Neue on mobile */
       .gallery-label,
       .caption {
         font-weight: 700;
       }
 
+      /* LOWER SECTION stacks */
       .side-by-side {
         flex-direction: column;
         margin: 20px 16px;
@@ -223,16 +192,23 @@
         width: 100%;
       }
 
+      /* PRINTMAKING: full width, with margins, no overflow */
       .printmaking-section {
-        margin: 20px 16px;
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+      }
+
+      #printmaking-gallery {
+        width: 100%;
       }
 
       #printmaking-gallery img {
         width: 100%;
         height: auto;
         max-width: 100%;
-        transform: rotate(90deg);
         display: block;
+        transform: rotate(90deg);
       }
     }
   </style>
@@ -240,6 +216,7 @@
 
 <body>
 
+  <!-- TOP SECTION -->
   <div class="top-layout">
 
     <div class="portrait-column">
@@ -253,25 +230,22 @@
         <a href="artists-i-like.html">artists I like</a> and things I see.
       </p>
 
+      <!-- STUDIES + SKETCHES -->
       <div class="galleries-row">
 
         <div class="gallery-block">
           <p class="gallery-label pink-label">Studies:</p>
 
           <div id="gallery1">
-
             <div class="slide active">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
             </div>
-
             <div class="slide">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
             </div>
-
             <div class="slide">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
             </div>
-
           </div>
 
           <p class="caption" id="caption1"></p>
@@ -281,19 +255,15 @@
           <p class="gallery-label yellow-label">Sketches:</p>
 
           <div id="gallery2">
-
             <div class="slide active">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
             </div>
-
             <div class="slide">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-07-19%20103336.png">
             </div>
-
             <div class="slide">
               <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Cow%20painting.png">
             </div>
-
           </div>
 
           <p class="caption" id="caption2"></p>
@@ -312,7 +282,7 @@
 
     <div class="text-block">
       <p>
-        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
+        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us...
       </p>
     </div>
     
