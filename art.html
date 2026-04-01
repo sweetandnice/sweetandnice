@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About My Art</title>
 
-  <!-- Comic Neue (fallback only when Comic Sans fails) -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -75,7 +74,7 @@
     .pink-label { color: #ff008f; }
     .yellow-label { color: #fff100; }
 
-    /* GALLERIES ROW (DESKTOP) */
+    /* DESKTOP GALLERIES (unchanged) */
     .galleries-row {
       display: flex;
       gap: 30px;
@@ -163,10 +162,9 @@
       margin-top: 0;
     }
 
-    /* MOBILE LAYOUT */
+    /* MOBILE LAYOUT FIXES */
     @media (max-width: 700px) {
 
-      /* Portrait + text side-by-side */
       .top-layout {
         flex-direction: row;
         align-items: flex-start;
@@ -194,16 +192,11 @@
         margin: 0;
       }
 
-      /* Galleries stay side-by-side under text */
       .galleries-row {
-        flex-direction: row;
-        gap: 10px;
+        flex-direction: column;
+        gap: 20px;
         width: 100%;
         margin-top: 10px;
-      }
-
-      .gallery-block {
-        flex: 1;
       }
 
       .gallery-block img {
@@ -216,13 +209,11 @@
         max-width: none;
       }
 
-      /* Make Comic Neue bold on mobile (when it’s used) */
       .gallery-label,
       .caption {
         font-weight: 700;
       }
 
-      /* Lower sections stack */
       .side-by-side {
         flex-direction: column;
         margin: 20px 16px;
@@ -232,7 +223,6 @@
         width: 100%;
       }
 
-      /* Printmaking slideshow */
       .printmaking-section {
         margin: 20px 16px;
       }
@@ -242,6 +232,7 @@
         height: auto;
         max-width: 100%;
         transform: rotate(90deg);
+        display: block;
       }
     }
   </style>
@@ -249,7 +240,6 @@
 
 <body>
 
-  <!-- TOP SECTION -->
   <div class="top-layout">
 
     <div class="portrait-column">
@@ -263,7 +253,6 @@
         <a href="artists-i-like.html">artists I like</a> and things I see.
       </p>
 
-      <!-- GALLERIES BACK INSIDE RIGHT COLUMN (DESKTOP LAYOUT RESTORED) -->
       <div class="galleries-row">
 
         <div class="gallery-block">
@@ -324,7 +313,6 @@
     <div class="text-block">
       <p>
         In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
-        In my final piece, I used pens, markers, colored pencils, and acrylic paint. I put the feather hanging off the side of the canvas, blending into the black center of the tree rings. I chose to keep the text in Hindi as a stylistic and symbolic choice. However, because of my unfamiliarability with the script, I ended up having to clean it back up and re-do it. While there were elements of the original piece that I like, the acrylic paint and sloppy typography cheapened the whole thing for me.
       </p>
     </div>
     
