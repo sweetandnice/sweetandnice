@@ -327,7 +327,8 @@
     <div class="slide">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/pinkpink.png">
     </div>
-    
+  </div>
+</div>
 
   <script>
     /* GALLERY 1 */
@@ -369,5 +370,17 @@
     setInterval(next2, 3000);
   </script>
 
+  /* PRINTMAKING GALLERY */
+  let indexP = 0;
+  const slidesP = document.querySelectorAll('#printmaking-gallery .slide');
+
+  function nextP() {
+    slidesP[indexP].classList.remove('active');
+    indexP = (indexP + 1) % slidesP.length;
+    slidesP[indexP].classList.add('active');
+  }
+
+setInterval(nextP, 3000);
+  
 </body>
 </html>
