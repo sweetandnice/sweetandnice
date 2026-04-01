@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About My Art</title>
 
-  <!-- Comic Neue (fallback only when Comic Sans fails) -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -25,8 +24,7 @@
       color: #ff9be6;
     }
 
-    /* DESKTOP LAYOUT (RESTORED) */
-
+    /* Top layout (desktop) */
     .top-layout {
       display: flex;
       align-items: flex-start;
@@ -54,6 +52,7 @@
       color: white;
     }
 
+    /* Galleries */
     .galleries-row {
       display: flex;
       gap: 30px;
@@ -107,6 +106,7 @@
       margin-top: 20px;
     }
 
+    /* Lower section */
     .side-by-side {
       display: flex;
       gap: 30px;
@@ -126,18 +126,15 @@
       transform: rotate(90deg);
     }
 
-    /* MOBILE LAYOUT (PERFECTED) */
-
+    /* Mobile layout */
     @media (max-width: 700px) {
 
-      /* Entire top section becomes vertical */
       .top-layout {
         flex-direction: column;
         margin: 16px;
         gap: 16px;
       }
 
-      /* Portrait + text side-by-side inside their own row */
       .mobile-top-row {
         display: flex;
         flex-direction: row;
@@ -145,7 +142,7 @@
       }
 
       .portrait-column {
-        flex: 0 0 55%; /* Option B */
+        flex: 0 0 55%;
       }
 
       .portrait-column img {
@@ -162,7 +159,6 @@
         line-height: 1.3;
       }
 
-      /* Studies + Sketches side-by-side BELOW portrait/text */
       .galleries-row {
         flex-direction: row;
         gap: 12px;
@@ -177,10 +173,9 @@
 
       .gallery-label,
       .caption {
-        font-weight: 700; /* Comic Neue bold on mobile */
+        font-weight: 700;
       }
 
-      /* Lower section stacks */
       .side-by-side {
         flex-direction: column;
         margin: 20px 16px;
@@ -190,7 +185,6 @@
         width: 100%;
       }
 
-      /* Printmaking gallery: full width, with margins, no overflow */
       .printmaking-section {
         width: 100%;
         padding: 0 16px;
@@ -210,12 +204,10 @@
 
 <body>
 
-  <!-- TOP SECTION -->
-
+  <!-- Top section -->
   <div class="top-layout">
 
     <div class="mobile-top-row">
-
       <div class="portrait-column">
         <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
       </div>
@@ -226,11 +218,10 @@
           <a href="artists-i-like.html">artists I like</a> and things I see.
         </p>
       </div>
-
     </div>
 
     <div class="right-column desktop-only">
-      <p class="intro-line desktop-intro">
+      <p class="intro-line">
         I have always enjoyed making art ^-^ I am inspired by 
         <a href="artists-i-like.html">artists I like</a> and things I see.
       </p>
@@ -272,20 +263,19 @@
           <p class="caption" id="caption2"></p>
         </div>
       </div>
-
     </div>
 
   </div>
 
+  <!-- Banner image -->
   <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/project3.png">
 
-  <!--LOWER SECTION -->
-
+  <!-- Lower section -->
   <div class="side-by-side">
 
     <div class="text-block">
       <p>
-        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself...
+        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
       </p>
     </div>
     
@@ -294,8 +284,7 @@
     </div>
   </div>
   
-  <!--PRINTMAKING SECTION -->
-
+  <!-- Printmaking -->
   <div class="side-by-side printmaking-section">
     
     <div class="gallery-block" id="printmaking-gallery">
@@ -324,8 +313,8 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-    /* GALLERY 1 */
     let index1 = 0;
     const slides1 = document.querySelectorAll('#gallery1 .slide');
     const captions1 = [
@@ -344,7 +333,6 @@
     }
     setInterval(next1, 3000);
 
-    /* GALLERY 2 */
     let index2 = 0;
     const slides2 = document.querySelectorAll('#gallery2 .slide');
     const captions2 = [
@@ -363,7 +351,6 @@
     }
     setInterval(next2, 3000);
 
-    /* PRINTMAKING GALLERY */
     let indexP = 0;
     const slidesP = document.querySelectorAll('#printmaking-gallery .slide');
 
