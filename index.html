@@ -41,27 +41,62 @@
       }
     }
 
-    /* BODY TEXT */
-    p {
-      font-size: 20px;
-      margin: 20px;
+    /* MAIN CONTENT GRID */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      align-items: start;
+    }
+
+    /* TEXT ON LEFT */
+    .text-block {
       color: #0000ff;
-      max-width: 700px;
+      font-size: 20px;
+      max-width: 500px;
       line-height: 1.4;
     }
 
-    /* SMALL IMAGES (NO ROUNDED CORNERS) */
-    .small-img {
-      width: 180px;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 0; /* removed rounding */
+    /* IMAGE AREA ON RIGHT (DESKTOP) */
+    .image-group {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
     }
 
+    .image-group img {
+      width: 150px;
+      height: auto;
+      border-radius: 0;
+    }
+
+    /* MOBILE LAYOUT */
     @media (max-width: 768px) {
-      .small-img {
-        width: 140px;
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      /* Eye image next to text */
+      .text-block {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .text-block img {
+        width: 120px;
+        height: auto;
+      }
+
+      /* Other two images side-by-side below */
+      .image-group {
+        justify-content: center;
+      }
+
+      .image-group img {
+        width: 130px;
       }
     }
 
@@ -72,6 +107,7 @@
       aspect-ratio: 16 / 9;
       overflow: hidden;
       position: relative;
+      margin-top: 20px;
     }
 
     .video-wrapper iframe {
@@ -89,18 +125,30 @@
     <h1>WELCOME TO MY PAGE</h1>
   </div>
 
-  <!-- THREE SMALL IMAGES -->
-  <img class="small-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
-  <img class="small-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
-  <img class="small-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+  <!-- MAIN CONTENT -->
+  <div class="content">
 
-  <!-- INTRO PARAGRAPH -->
-  <p>
-    My Name Is Eva Ruth.
-    <a href="art.html">I draw and paint</a> and
-    <a href="erf.html">I love Earth</a>.
-    This is extra memory space to store my thoughts and document my life.
-  </p>
+    <!-- TEXT + EYE IMAGE (mobile only) -->
+    <div class="text-block">
+      <p>
+        My Name Is Eva Ruth.
+        <a href="art.html">I draw and paint</a> and
+        <a href="erf.html">I love Earth</a>.
+        This is extra memory space to store my thoughts and document my life.
+      </p>
+
+      <!-- Eye image appears here on mobile -->
+      <img class="eye-mobile" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+    </div>
+
+    <!-- IMAGES (desktop: all 3 here; mobile: only 2 here) -->
+    <div class="image-group">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
+      <img class="eye-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+    </div>
+
+  </div>
 
   <!-- VIDEO -->
   <div class="video-wrapper">
