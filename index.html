@@ -17,7 +17,7 @@
       src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
     }
 
-    /* HEADER CONTAINER */
+    /* HEADER */
     .hero-header {
       width: 100%;
       text-align: center;
@@ -35,7 +35,6 @@
       transform: rotate(-1deg);
     }
 
-    /* MOBILE HEADER SIZE */
     @media (max-width: 768px) {
       .hero-header h1 {
         font-size: 90px;
@@ -49,6 +48,21 @@
       color: #0000ff;
       max-width: 700px;
       line-height: 1.4;
+    }
+
+    /* SMALL IMAGES */
+    .small-img {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .small-img {
+        width: 140px;
+      }
     }
 
     /* VIDEO WRAPPER */
@@ -70,10 +84,14 @@
 
 <body>
 
-  <!-- RESPONSIVE BRADTHEN HEADER -->
+  <!-- HEADER -->
   <div class="hero-header">
     <h1>WELCOME TO MY PAGE</h1>
   </div>
+
+  <!-- SMALL IMAGES (TEMPORARY INLINE) -->
+  <img class="small-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
+  <img class="small-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
 
   <!-- INTRO PARAGRAPH -->
   <p>
