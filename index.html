@@ -87,9 +87,10 @@ body {
 .header-row .web,
 .header-row .paprika {
   grid-row: 2;
-  width: 100%;          /* forces landscape images to scale up */
-  height: 100px;        /* fixed height for both */
-  object-fit: contain;  /* maintain scale, no cropping */
+  width: 100%;
+  height: 100px;         /* fixed height */
+  object-fit: contain;   /* maintain scale */
+  object-position: center; /* center inside the box */
   background-color: black;
   padding: 2px;
   display: block;
