@@ -54,39 +54,54 @@
       }
     }
 
-    /* MOBILE LAYOUT */
-    @media (max-width: 768px) {
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
 
-      .header-row {
-        flex-wrap: wrap; !important;
-        gap: 6px;
-        padding: 10px;
-      }
+  .header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
 
-      .header-row h1 {
-        font-size: 55px;
-        order: 1;
-      }
+  /* First row: WELCOME + EYE */
+  .header-row h1 {
+    font-size: 55px;
+    order: 1;
+    flex: 1 1 auto; /* take up remaining space on row */
+    text-align: left;
+  }
 
-      .eye {
-        height: 40px;
-        order: 2;
-        flex: 0 0 auto;
-      }
+  .eye {
+    height: 40px;
+    order: 2;
+    flex: 0 0 auto; /* stay sized to content */
+    align-self: center;
+  }
 
-      /* WEBSITE + PAPRIKA on row 2 */
-      .web {
-        height: 70px;
-        order: 3;
-        flex: 0 0 45%;
-      }
+  /* Second row: WEB + PAPRIKA */
+  .web {
+    height: 70px;
+    order: 3;
+    flex: 1 1 48%; /* roughly half-width */
+  }
 
-      .paprika {
-        height: 70px;
-        order: 4;
-        flex: 0 0 45%;
-      }
-    }
+  .paprika {
+    height: 70px;
+    order: 4;
+    flex: 1 1 48%; /* roughly half-width */
+  }
+
+  /* Make the second row elements display inline like row */
+  .web, .paprika {
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* Force first row elements to stay on their own line */
+  .header-row h1, .eye {
+    display: inline-block;
+  }
+}
 
     /* BIO TEXT */
     .text-block {
