@@ -1,138 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bunnie's Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunnie's Page</title>
 
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
 
-    @font-face {
-      font-family: "Bradthen";
-      src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
-      font-weight: 400;
-    }
+@font-face {
+  font-family: "Bradthen";
+  src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
+  font-weight: 400;
+}
 
-    /* BASE HEADER ROW */
-    .header-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-      max-width: 100%;
-      flex-wrap: nowrap; /* desktop default */
-    }
+/* Base header row */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  max-width: 100%;
+  flex-wrap: nowrap; /* desktop default */
+}
 
-    .header-row h1 {
-      font-family: "Bradthen";
-      font-size: 150px;
-      color: #cdebf9;
-      margin: 0;
-      transform: rotate(-1deg);
-      letter-spacing: -3px;
-      line-height: 0.9;
-      white-space: nowrap;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-    }
+.header-row h1 {
+  font-family: "Bradthen";
+  font-size: 150px;
+  color: #cdebf9;
+  margin: 0;
+  transform: rotate(-1deg);
+  letter-spacing: -3px;
+  line-height: 0.9;
+  white-space: nowrap;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
 
-    .header-row img {
-      height: 130px;
-      width: auto;
-    }
+.header-row img {
+  height: 130px;
+  width: auto;
+}
 
-    /* DESKTOP ONLY */
-    @media (min-width: 769px) {
-      .header-row {
-        flex-wrap: nowrap;
-      }
-    }
+/* Desktop layout */
+@media (min-width: 769px) {
+  .header-row {
+    flex-wrap: nowrap;
+  }
+}
 
-    /* MOBILE LAYOUT */
-    @media (max-width: 768px) {
-      .header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-        gap: 15px;
-      }
+/* Mobile layout */
+@media (max-width: 768px) {
 
-      /* First row: title + eye */
-      .header-row-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; /* vertically center eye */
-        width: 100%;
-      }
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    gap: 15px;
+  }
 
-      .header-row-top h1 {
-        font-size: 60px;
-        line-height: 1;
-        margin: 0;
-      }
+  /* First row: title + eye */
+  .header-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
-      .header-row-top .eye {
-        height: 55px;
-        flex: 0 0 auto;
-      }
+  .header-row-top h1 {
+    font-size: 60px;
+    line-height: 1;
+    margin: 0;
+  }
 
-      /* Second row: web + paprika */
-      .header-row-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch; /* equal height */
-        width: 100%;
-        gap: 10px;
-      }
+  .header-row-top .eye {
+    height: 55px;
+    flex: 0 0 auto;
+  }
 
-      .header-row-bottom img {
-        flex: 1;
-        height: 150px;
-        width: auto;
-        object-fit: cover;
-      }
-    }
+  /* Second row: web + paprika */
+  .header-row-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
 
-    /* BIO TEXT */
-    .text-block {
-      color: #0000ff;
-      font-size: 20px;
-      max-width: 700px;
-      margin: 20px auto;
-      line-height: 1.4;
-      text-align: left;
-    }
-  </style>
+  .header-row-bottom img {
+    flex: 1;
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+/* BIO TEXT */
+.text-block {
+  color: #0000ff;
+  font-size: 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.4;
+  text-align: left;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="header-row">
-    <div class="header-row-top">
-      <h1>WELCOME TO MY PAGE</h1>
-      <img class="eye" src="pics/eye.JPEG" alt="Eye">
-    </div>
-
-    <div class="header-row-bottom">
-      <img class="web" src="pics/web.jpg" alt="Web">
-      <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
-    </div>
+<div class="header-row">
+  <!-- Mobile first row -->
+  <div class="header-row-top">
+    <h1>WELCOME TO MY PAGE</h1>
+    <img class="eye" src="pics/eye.JPEG" alt="Eye">
   </div>
 
-  <div class="text-block">
-    <p>
-      My Name Is Eva Ruth.
-      <a href="art.html">I draw and paint</a> and
-      <a href="erf.html">I love Earth</a>.
-      This is extra memory space to store my thoughts and document my life.
-    </p>
+  <!-- Mobile second row -->
+  <div class="header-row-bottom">
+    <img class="web" src="pics/web.jpg" alt="Web">
+    <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
   </div>
+</div>
+
+<div class="text-block">
+  <p>
+    My Name Is Eva Ruth.
+    <a href="art.html">I draw and paint</a> and
+    <a href="erf.html">I love Earth</a>.
+    This is extra memory space to store my thoughts and document my life.
+  </p>
+</div>
 
 </body>
 </html>
