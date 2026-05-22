@@ -68,10 +68,10 @@ body {
     padding: 16px;
   }
 
-  /* Row 1: Title + Eye */
+  /* Row 1 */
   .header-row h1 {
     grid-column: 1;
-    font-size: 75px;   /* your chosen size */
+    font-size: 75px;
     margin: 0;
     line-height: 1.05;
   }
@@ -79,20 +79,18 @@ body {
   .header-row .eye {
     grid-column: 2;
     justify-self: end;
-    height: 75px;      /* matches text */
+    height: 75px;
     width: auto;
   }
 
-  /* Row 2: Web + Paprika */
+  /* Row 2 — equal visible height */
   .header-row .web,
   .header-row .paprika {
     grid-row: 2;
     width: 100%;
-    height: 160px;        /* equal-height box */
-    object-fit: cover;    /* fills the box */
-    padding: 6px;         /* prevents caption cropping */
+    height: 200px;        /* ← increase this until BOTH images fit */
+    object-fit: contain;  /* ← keeps full image visible */
     background-color: black;
-    border-radius: 4px;
     display: block;
   }
 
