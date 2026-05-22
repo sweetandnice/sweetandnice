@@ -83,27 +83,28 @@ body {
     width: auto;
   }
 
-  /* Row 2 — equal height box, but each image scales independently */
+/* Row 2 — equal-height box, each image scales independently */
 .header-row .web,
 .header-row .paprika {
   grid-row: 2;
   width: 100%;
-  height: 180px;        /* equal-height box */
+  height: 200px;        /* equal-height box */
   object-fit: contain;  /* no cropping */
   padding: 8px;
   background-color: black;
   display: block;
 }
 
-/* Cat image shrinks more */
+/* Cat image — shrink more */
 .header-row .web {
-  max-height: 120px;
+  max-height: 130px;    /* make cat smaller */
 }
 
-/* Paprika image shrinks slightly less */
+/* Paprika image — shrink less */
 .header-row .paprika {
-  max-height: 140px;
+  max-height: 160px;    /* make paprika bigger */
 }
+
 
   .header-row .web { grid-column: 1; }
   .header-row .paprika { grid-column: 2; }
