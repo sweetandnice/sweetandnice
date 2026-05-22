@@ -1,114 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bunnie's Page</title>
+<style>
+  body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+  }
 
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-    }
+  @font-face {
+    font-family: "Bradthen";
+    src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
+    font-weight: 400;
+  }
 
-    @font-face {
-      font-family: "Bradthen";
-      src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
-      font-weight: 400;
-    }
+  /* ONE FLEX ROW FOR EVERYTHING */
+  .header-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-    /* ONE FLEX ROW FOR EVERYTHING */
+  .header-row h1 {
+    font-family: "Bradthen";
+    font-size: 150px; /* slightly smaller so everything fits */
+    color: #cdebf9;
+    margin: 0;
+    transform: rotate(-1deg);
+    letter-spacing: -3px;
+    line-height: 0.9;
+    white-space: nowrap;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* IMAGES KEEP PROPORTIONS */
+  .header-row img {
+    height: 130px; /* slightly smaller */
+    width: auto;
+    border-radius: 0;
+  }
+
+  /* MOBILE LAYOUT */
+  @media (max-width: 768px) {
+
     .header-row {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: nowrap; /* desktop: stay in one row */
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .header-row h1 {
-      font-family: "Bradthen";
-      font-size: 175px;
-      color: #cdebf9;
-      margin: 0;
-      transform: rotate(-1deg);
-      letter-spacing: -3px;
-      line-height: 0.9;
-      white-space: nowrap;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
+      font-size: 70px;
+      order: 1;
     }
 
-    /* IMAGES KEEP PROPORTIONS */
-    .header-row img {
-      height: 150px;
-      width: auto;
-      border-radius: 0;
+    .eye {
+      height: 70px;
+      order: 2;
     }
 
-    /* MOBILE LAYOUT */
-    @media (max-width: 768px) {
-
-      .header-row {
-        flex-wrap: wrap;        /* allow two rows */
-        justify-content: center;
-      }
-
-      .header-row h1 {
-        font-size: 90px;
-        order: 1;
-      }
-
-      .eye {
-        height: 90px;
-        order: 2;
-      }
-
-      .web {
-        height: 110px;
-        order: 3;
-      }
-
-      .paprika {
-        height: 110px;
-        order: 4;
-      }
+    .web {
+      height: 90px;
+      order: 3;
     }
 
-    /* BIO TEXT */
-    .text-block {
-      color: #0000ff;
-      font-size: 20px;
-      max-width: 700px;
-      margin: 20px;
-      line-height: 1.4;
+    .paprika {
+      height: 90px;
+      order: 4;
     }
-  </style>
-</head>
+  }
 
-<body>
+  /* BIO TEXT */
+  .text-block {
+    color: #0000ff;
+    font-size: 20px;
+    max-width: 700px;
+    margin: 20px;
+    line-height: 1.4;
+  }
+</style>
 
-  <!-- ONE ROW THAT REARRANGES ITSELF -->
-  <div class="header-row">
+<div class="header-row">
+  <h1>WELCOME TO MY PAGE</h1>
 
-    <h1>WELCOME TO MY PAGE</h1>
+  <img class="eye" src="pics/eye.JPEG">
+  <img class="web" src="pics/web.jpg">
+  <img class="paprika" src="pics/paprika.jpg">
+</div>
 
-    <img class="eye" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
-    <img class="web" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
-    <img class="paprika" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
-
-  </div>
-
-  <!-- BIO TEXT BELOW EVERYTHING -->
-  <div class="text-block">
-    <p>
-      My Name Is Eva Ruth.
-      <a href="art.html">I draw and paint</a> and
-      <a href="erf.html">I love Earth</a>.
-      This is extra memory space to store my thoughts and document my life.
-    </p>
-  </div>
-
-</body>
-</html>
+<div class="text-block">
+  <p>
+    My Name Is Eva Ruth.
+    <a href="art.html">I draw and paint</a> and
+    <a href="erf.html">I love Earth</a>.
+    This is extra memory space to store my thoughts and document my life.
+  </p>
+</div>
