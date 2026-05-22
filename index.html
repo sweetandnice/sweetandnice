@@ -18,7 +18,7 @@
       font-weight: 400;
     }
 
-    /* Base header row */
+    /* BASE HEADER ROW */
     .header-row {
       display: flex;
       align-items: center;
@@ -47,7 +47,7 @@
       width: auto;
     }
 
-    /* Desktop layout */
+    /* DESKTOP ONLY */
     @media (min-width: 769px) {
       .header-row {
         flex-wrap: nowrap;
@@ -67,29 +67,32 @@
       }
 
       .header-row-top h1 {
-        font-size: 55px;
+        font-size: 60px;
+        line-height: 1.0;
         flex: 1;
-        text-align: left;
       }
 
       .header-row-top .eye {
-        height: 35px; /* smaller on mobile */
+        height: 55px; /* balanced size */
         flex: 0 0 auto;
+        margin-left: 15px;
       }
 
       /* Second row: WEB + PAPRIKA */
       .header-row-bottom {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch; /* make images same height */
         width: 100%;
         padding: 10px;
+        gap: 10px;
       }
 
       .header-row-bottom img {
-        width: 48%;
-        height: auto;
-        object-fit: contain; /* prevent stretching */
+        height: 150px; /* fixed height so both match */
+        width: auto;   /* maintain aspect ratio */
+        object-fit: cover;
+        flex: 1 1 0; /* equal width */
       }
     }
 
