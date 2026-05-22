@@ -83,22 +83,20 @@ body {
     width: auto;
   }
 
-/* Row 2 — equal-height box, each image scales independently */
+/* Row 2 — both images exactly 100px tall, scaled correctly */
 .header-row .web,
 .header-row .paprika {
   grid-row: 2;
-  width: 100%;
-  height: 100px;        /* equal-height box */
-  object-fit: contain;  /* no cropping */
-  padding: 2px;
+  width: 100%;          /* forces landscape images to scale up */
+  height: 100px;        /* fixed height for both */
+  object-fit: contain;  /* maintain scale, no cropping */
   background-color: black;
+  padding: 2px;
   display: block;
 }
 
-
-  .header-row .web { grid-column: 1; }
-  .header-row .paprika { grid-column: 2; }
-}
+.header-row .web { grid-column: 1; }
+.header-row .paprika { grid-column: 2; }
 
 
 /* BIO TEXT */
