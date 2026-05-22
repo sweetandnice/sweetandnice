@@ -45,11 +45,19 @@ body {
   width: auto;
 }
 
-/* Make the two wrapper divs disappear on desktop so all 4 items sit in one row */
+/* Desktop: show desktop hero, hide mobile hero */
 @media (min-width: 769px) {
   .header-row-top,
   .header-row-bottom {
     display: contents;
+  }
+
+  .hero-mobile { display: none; }
+  .hero-desktop { display: block; width: 100%; }
+
+  .video-wrapper {
+    width: 50%;
+    margin: 0 auto;
   }
 }
 
@@ -81,11 +89,13 @@ body {
     justify-self: end;
     height: 75px;
     width: auto;
+    align-self: start;
+    margin-top: -10px; /* move eye upward */
   }
 
-  /* Row 2 — now a clean flexbox row */
+  /* Row 2 — flexbox row */
   .header-row-bottom {
-    grid-column: 1 / span 2;   /* full width row */
+    grid-column: 1 / span 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -94,9 +104,17 @@ body {
   }
 
   .header-row-bottom img {
-    height: 100px;   /* both exactly 100px tall */
-    width: auto;     /* maintain proportions */
+    height: 100px;
+    width: auto;
     display: block;
+  }
+
+  /* Mobile hero visible */
+  .hero-mobile { display: block; width: 100%; }
+  .hero-desktop { display: none; }
+
+  .video-wrapper {
+    width: 100%;
   }
 }
 
@@ -108,6 +126,13 @@ body {
   margin: 20px auto;
   line-height: 1.4;
   text-align: left;
+}
+
+/* Responsive YouTube embed */
+.video-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
 }
 </style>
 </head>
@@ -130,6 +155,10 @@ body {
 
 </div>
 
+<!-- ROW 3: Full-width hero image -->
+<img class="hero-mobile" src="pics/pre_mobile.jpg" alt="Hero Mobile">
+<img class="hero-desktop" src="pics/pre_desktop.jpg" alt="Hero Desktop">
+
 <div class="text-block">
   <p>
     My Name Is Eva Ruth.
@@ -139,6 +168,13 @@ body {
   </p>
 </div>
 
+<!-- YouTube video -->
+<div class="video-wrapper">
+  <iframe 
+    src="https://www.youtube.com/embed/TB-lQcuo5xU?si=Q1pGS3LKtBbIA8XG"
+    allowfullscreen>
+  </iframe>
+</div>
+
 </body>
 </html>
-
