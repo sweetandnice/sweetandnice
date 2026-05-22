@@ -15,15 +15,16 @@
     @font-face {
       font-family: "Bradthen";
       src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
+      font-weight: 400;
     }
 
-    /* DESKTOP HEADER ROW */
+    /* ONE FLEX ROW FOR EVERYTHING */
     .header-row {
       display: flex;
       align-items: center;
       gap: 20px;
       padding: 20px;
-      flex-wrap: nowrap;
+      flex-wrap: nowrap; /* desktop: stay in one row */
     }
 
     .header-row h1 {
@@ -35,6 +36,8 @@
       letter-spacing: -3px;
       line-height: 0.9;
       white-space: nowrap;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* IMAGES KEEP PROPORTIONS */
@@ -47,47 +50,30 @@
     /* MOBILE LAYOUT */
     @media (max-width: 768px) {
 
-      /* First row: title + eye */
       .header-row {
-        flex-wrap: wrap;
+        flex-wrap: wrap;        /* allow two rows */
         justify-content: center;
       }
 
       .header-row h1 {
         font-size: 90px;
+        order: 1;
       }
 
-      /* Hide desktop images on mobile */
-      .eye-desktop,
-      .web-desktop,
-      .paprika-desktop {
-        display: none;
-      }
-
-      /* Show mobile eye */
-      .eye-mobile {
-        display: block;
+      .eye {
         height: 90px;
-        width: auto;
+        order: 2;
       }
 
-      /* Second row: website + paprika */
-      .image-row-mobile {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 10px;
-      }
-
-      .image-row-mobile img {
+      .web {
         height: 110px;
-        width: auto;
+        order: 3;
       }
-    }
 
-    /* DESKTOP: hide mobile eye */
-    .eye-mobile {
-      display: none;
+      .paprika {
+        height: 110px;
+        order: 4;
+      }
     }
 
     /* BIO TEXT */
@@ -103,31 +89,18 @@
 
 <body>
 
-  <!-- DESKTOP: title + eye + website + paprika -->
-  <!-- MOBILE: title + eye only -->
+  <!-- ONE ROW THAT REARRANGES ITSELF -->
   <div class="header-row">
 
     <h1>WELCOME TO MY PAGE</h1>
 
-    <!-- Eye (desktop version) -->
-    <img class="eye-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
-
-    <!-- Eye (mobile version) -->
-    <img class="eye-mobile" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
-
-    <!-- Website + Paprika (desktop only) -->
-    <img class="web-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
-    <img class="paprika-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
+    <img class="eye" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+    <img class="web" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
+    <img class="paprika" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
 
   </div>
 
-  <!-- MOBILE: second row (website + paprika) -->
-  <div class="image-row-mobile">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
-  </div>
-
-  <!-- BIO TEXT (never interacts with images) -->
+  <!-- BIO TEXT BELOW EVERYTHING -->
   <div class="text-block">
     <p>
       My Name Is Eva Ruth.
