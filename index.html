@@ -48,38 +48,41 @@
   }
 
   /* MOBILE LAYOUT */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-    .header-row {
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 10px;
-    }
-
-    .header-row h1 {
-      font-size: 55px;
-      order: 1;
-    }
-
-    .eye {
-      height: 40px;
-      order: 2;
-      flex: 0 0 auto;
-    }
-
-    /* WEBSITE + PAPRIKA on row 2 */
-    .web {
-      height: 70px;
-      order: 3;
-      flex: 0 0 45%;
-    }
-
-    .paprika {
-      height: 70px;
-      order: 4;
-      flex: 0 0 45%;
-    }
+  .header-row {
+    flex-wrap: wrap;
+    justify-content: space-between; /* ← key change */
+    gap: 10px;
+    padding: 10px;
   }
+
+  .header-row h1 {
+    font-size: 55px;
+    order: 1;
+    flex: 0 1 auto; /* ← stays next to eye */
+    white-space: nowrap;
+  }
+
+  .eye {
+    height: 40px;
+    order: 2;
+    flex: 0 1 auto; /* ← stays next to header */
+  }
+
+  .web {
+    height: 70px;
+    order: 3;
+    flex: 0 0 48%; /* ← row 2 left */
+  }
+
+  .paprika {
+    height: 70px;
+    order: 4;
+    flex: 0 0 48%; /* ← row 2 right */
+  }
+}
+
 
   /* BIO TEXT */
   .text-block {
