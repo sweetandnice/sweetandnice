@@ -11,20 +11,19 @@
     font-weight: 400;
   }
 
-  /* ONE FLEX ROW FOR EVERYTHING */
+  /* BASE HEADER ROW (shared by desktop + mobile) */
   .header-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     padding: 20px;
-    flex-wrap: nowrap;
     max-width: 100%;
-    overflow-x: hidden;
   }
 
   .header-row h1 {
     font-family: "Bradthen";
-    font-size: 150px; /* slightly smaller so everything fits */
+    font-size: 150px;
     color: #cdebf9;
     margin: 0;
     transform: rotate(-1deg);
@@ -35,58 +34,61 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* IMAGES KEEP PROPORTIONS */
+  /* Desktop image sizing */
   .header-row img {
-    height: 130px; /* slightly smaller */
+    height: 130px;
     width: auto;
-    border-radius: 0;
+  }
+
+  /* DESKTOP ONLY — keep everything in one row */
+  @media (min-width: 769px) {
+    .header-row {
+      flex-wrap: nowrap;
+    }
   }
 
   /* MOBILE LAYOUT */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-  .header-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-    padding: 5px;
+    .header-row {
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px;
+    }
+
+    .header-row h1 {
+      font-size: 55px;
+      order: 1;
+    }
+
+    .eye {
+      height: 40px;
+      order: 2;
+      flex: 0 0 auto;
+    }
+
+    /* WEBSITE + PAPRIKA on row 2 */
+    .web {
+      height: 70px;
+      order: 3;
+      flex: 0 0 45%;
+    }
+
+    .paprika {
+      height: 70px;
+      order: 4;
+      flex: 0 0 45%;
+    }
   }
-
-  .header-row h1 {
-    font-size: 50px;
-    order: 1;
-  }
-
-  .eye {
-    height: 40px;
-    order: 2;
-    flex: 0 0 auto;
-  }
-
-  /* WEBSITE + PAPRIKA ALWAYS ON ROW 2 */
-  .web {
-    height: 65px;
-    width: 45%;   /* forces them to share row 2 */
-    order: 3;
-    flex: 0 0 45%;
-  }
-
-  .paprika {
-    height: 65px;
-    width: 45%;   /* forces them to share row 2 */
-    order: 4;
-    flex: 0 0 45%;
-  }
-}
-
 
   /* BIO TEXT */
   .text-block {
     color: #0000ff;
     font-size: 20px;
     max-width: 700px;
-    margin: 20px;
+    margin: 20px auto;
     line-height: 1.4;
+    text-align: left;
   }
 </style>
 
