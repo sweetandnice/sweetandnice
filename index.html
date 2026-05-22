@@ -18,7 +18,7 @@
       font-weight: 400;
     }
 
-    /* BASE HEADER ROW (shared by desktop + mobile) */
+    /* BASE HEADER ROW */
     .header-row {
       display: flex;
       align-items: center;
@@ -47,61 +47,47 @@
       width: auto;
     }
 
-    /* DESKTOP ONLY — keep everything in one row */
+    /* DESKTOP ONLY */
     @media (min-width: 769px) {
       .header-row {
         flex-wrap: nowrap;
       }
     }
 
-/* MOBILE LAYOUT */
-@media (max-width: 768px) {
+    /* MOBILE LAYOUT */
+    @media (max-width: 768px) {
 
-  .header-row {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-  }
+      .header-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+      }
 
-  /* First row: WELCOME + EYE */
-  .header-row h1 {
-    font-size: 55px;
-    order: 1;
-    flex: 1 1 auto; /* take up remaining space on row */
-    text-align: left;
-  }
+      /* FIRST ROW: WELCOME + EYE */
+      .header-row h1 {
+        font-size: 55px;
+        order: 1;
+        flex: 1; /* take remaining space */
+        text-align: left;
+      }
 
-  .eye {
-    height: 40px;
-    order: 2;
-    flex: 0 0 auto; /* stay sized to content */
-    align-self: center;
-  }
+      .eye {
+        order: 2;
+        height: 40px; /* smaller on mobile */
+        flex: 0 0 auto;
+      }
 
-  /* Second row: WEB + PAPRIKA */
-  .web {
-    height: 70px;
-    order: 3;
-    flex: 1 1 48%; /* roughly half-width */
-  }
-
-  .paprika {
-    height: 70px;
-    order: 4;
-    flex: 1 1 48%; /* roughly half-width */
-  }
-
-  /* Make the second row elements display inline like row */
-  .web, .paprika {
-    display: inline-block;
-    text-align: center;
-  }
-
-  /* Force first row elements to stay on their own line */
-  .header-row h1, .eye {
-    display: inline-block;
-  }
-}
+      /* SECOND ROW: WEB + PAPRIKA */
+      .web, .paprika {
+        order: 3;
+        flex: 0 0 48%; /* roughly half width each */
+        height: auto;
+        object-fit: contain; /* prevent stretching */
+      }
+    }
 
     /* BIO TEXT */
     .text-block {
@@ -119,10 +105,9 @@
 
   <div class="header-row">
     <h1>WELCOME TO MY PAGE</h1>
-
-    <img class="eye" src="pics/eye.JPEG">
-    <img class="web" src="pics/web.jpg">
-    <img class="paprika" src="pics/paprika.jpg">
+    <img class="eye" src="pics/eye.JPEG" alt="Eye">
+    <img class="web" src="pics/web.jpg" alt="Web">
+    <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
   </div>
 
   <div class="text-block">
