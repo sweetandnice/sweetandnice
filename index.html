@@ -65,14 +65,14 @@ body {
   .header-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 18px;
     padding: 16px;
   }
 
   /* Row 1: Title + Eye */
   .header-row h1 {
     grid-column: 1;
-    font-size: 58px;   /* bigger text */
+    font-size: 64px;   /* bigger text */
     margin: 0;
     line-height: 1.05;
   }
@@ -80,7 +80,7 @@ body {
   .header-row .eye {
     grid-column: 2;
     justify-self: end;
-    height: 58px;      /* same visual height as text */
+    height: 64px;      /* same height as text */
     width: auto;
   }
 
@@ -88,11 +88,10 @@ body {
   .header-row .web,
   .header-row .paprika {
     grid-row: 2;
-    grid-column: span 1;
     width: 100%;
-    height: 150px;        /* equal height box */
-    object-fit: contain;  /* NO cropping */
-    background-color: black; /* prevents weird gaps */
+    height: 160px;        /* equal-height box */
+    object-fit: contain;  /* no cropping */
+    background-color: black;
     display: block;
   }
 
