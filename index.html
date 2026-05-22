@@ -1,113 +1,124 @@
-<style>
-  body {
-    background-color: black;
-    margin: 0;
-    padding: 0;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bunnie's Page</title>
 
-  @font-face {
-    font-family: "Bradthen";
-    src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
-    font-weight: 400;
-  }
-
-  /* BASE HEADER ROW (shared by desktop + mobile) */
-  .header-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    max-width: 100%;
-  }
-
-  .header-row h1 {
-    font-family: "Bradthen";
-    font-size: 150px;
-    color: #cdebf9;
-    margin: 0;
-    transform: rotate(-1deg);
-    letter-spacing: -3px;
-    line-height: 0.9;
-    white-space: nowrap;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* Desktop image sizing */
-  .header-row img {
-    height: 130px;
-    width: auto;
-  }
-
-  /* DESKTOP ONLY — keep everything in one row */
-  @media (min-width: 769px) {
-    .header-row {
-      flex-wrap: nowrap;
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
     }
-  }
 
-  /* MOBILE LAYOUT */
-@media (max-width: 768px) {
+    @font-face {
+      font-family: "Bradthen";
+      src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
+      font-weight: 400;
+    }
 
-  .header-row {
-    flex-wrap: wrap;
-    justify-content: space-between; /* ← key change */
-    gap: 10px;
-    padding: 10px;
-  }
+    /* BASE HEADER ROW (shared by desktop + mobile) */
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      max-width: 100%;
+    }
 
-  .header-row h1 {
-    font-size: 55px;
-    order: 1;
-    flex: 0 1 auto; /* ← stays next to eye */
-    white-space: nowrap;
-  }
+    .header-row h1 {
+      font-family: "Bradthen";
+      font-size: 150px;
+      color: #cdebf9;
+      margin: 0;
+      transform: rotate(-1deg);
+      letter-spacing: -3px;
+      line-height: 0.9;
+      white-space: nowrap;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .eye {
-    height: 40px;
-    order: 2;
-    flex: 0 1 auto; /* ← stays next to header */
-  }
+    /* Desktop image sizing */
+    .header-row img {
+      height: 130px;
+      width: auto;
+    }
 
-  .web {
-    height: 70px;
-    order: 3;
-    flex: 0 0 48%; /* ← row 2 left */
-  }
+    /* DESKTOP ONLY — keep everything in one row */
+    @media (min-width: 769px) {
+      .header-row {
+        flex-wrap: nowrap;
+      }
+    }
 
-  .paprika {
-    height: 70px;
-    order: 4;
-    flex: 0 0 48%; /* ← row 2 right */
-  }
-}
+    /* MOBILE LAYOUT */
+    @media (max-width: 768px) {
 
+      .header-row {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 10px;
+      }
 
-  /* BIO TEXT */
-  .text-block {
-    color: #0000ff;
-    font-size: 20px;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.4;
-    text-align: left;
-  }
-</style>
+      .header-row h1 {
+        font-size: 55px;
+        order: 1;
+      }
 
-<div class="header-row">
-  <h1>WELCOME TO MY PAGE</h1>
+      .eye {
+        height: 40px;
+        order: 2;
+        flex: 0 0 auto;
+      }
 
-  <img class="eye" src="pics/eye.JPEG">
-  <img class="web" src="pics/web.jpg">
-  <img class="paprika" src="pics/paprika.jpg">
-</div>
+      /* WEBSITE + PAPRIKA on row 2 */
+      .web {
+        height: 70px;
+        order: 3;
+        flex: 0 0 45%;
+      }
 
-<div class="text-block">
-  <p>
-    My Name Is Eva Ruth.
-    <a href="art.html">I draw and paint</a> and
-    <a href="erf.html">I love Earth</a>.
-    This is extra memory space to store my thoughts and document my life.
-  </p>
-</div>
+      .paprika {
+        height: 70px;
+        order: 4;
+        flex: 0 0 45%;
+      }
+    }
+
+    /* BIO TEXT */
+    .text-block {
+      color: #0000ff;
+      font-size: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.4;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header-row">
+    <h1>WELCOME TO MY PAGE</h1>
+
+    <img class="eye" src="pics/eye.JPEG">
+    <img class="web" src="pics/web.jpg">
+    <img class="paprika" src="pics/paprika.jpg">
+  </div>
+
+  <div class="text-block">
+    <p>
+      My Name Is Eva Ruth.
+      <a href="art.html">I draw and paint</a> and
+      <a href="erf.html">I love Earth</a>.
+      This is extra memory space to store my thoughts and document my life.
+    </p>
+  </div>
+
+</body>
+</html>
+
