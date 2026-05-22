@@ -23,6 +23,7 @@
       align-items: center;
       gap: 20px;
       padding: 20px;
+      flex-wrap: nowrap;
     }
 
     .header-row h1 {
@@ -33,6 +34,7 @@
       transform: rotate(-1deg);
       letter-spacing: -3px;
       line-height: 0.9;
+      white-space: nowrap;
     }
 
     /* IMAGES KEEP PROPORTIONS */
@@ -53,14 +55,16 @@
 
       .header-row h1 {
         font-size: 90px;
-        width: auto;
       }
 
-      /* Hide desktop eye, show mobile eye */
-      .eye-desktop {
+      /* Hide desktop images on mobile */
+      .eye-desktop,
+      .web-desktop,
+      .paprika-desktop {
         display: none;
       }
 
+      /* Show mobile eye */
       .eye-mobile {
         display: block;
         height: 90px;
