@@ -56,7 +56,12 @@ body {
 /* MOBILE LAYOUT */
 @media (max-width: 768px) {
 
-  /* Use a 2×2 grid */
+  /* Make wrappers disappear so grid sees 4 items */
+  .header-row-top,
+  .header-row-bottom {
+    display: contents;
+  }
+
   .header-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -64,32 +69,33 @@ body {
     padding: 10px;
   }
 
-  /* Row 1: title + eye */
-  .header-row-top h1 {
+  /* Row 1 */
+  .header-row h1 {
     grid-column: 1;
     font-size: 55px;
     margin: 0;
   }
 
-  .header-row-top .eye {
+  .eye {
     grid-column: 2;
     justify-self: end;
     height: 55px;
   }
 
-  /* Row 2: web + paprika */
-  .header-row-bottom .web {
+  /* Row 2 */
+  .web {
     grid-column: 1;
     width: 100%;
     height: auto;
   }
 
-  .header-row-bottom .paprika {
+  .paprika {
     grid-column: 2;
     width: 100%;
     height: auto;
   }
 }
+
 
 /* BIO TEXT */
 .text-block {
