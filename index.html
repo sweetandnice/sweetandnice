@@ -17,91 +17,67 @@
       src: url("fonts/Bradthen-JRz5E.otf") format("opentype");
     }
 
-    /* HEADER */
-    .hero-header {
-      width: 100%;
-      text-align: center;
-      padding-top: 20px;
-    }
-
-    .hero-header h1 {
-      font-family: "Bradthen";
-      font-size: 175px;
-      font-weight: normal;
-      color: #cdebf9;
-      margin: 0;
-      line-height: 0.9;
-      letter-spacing: -3px;
-      transform: rotate(-1deg);
-    }
-
-    @media (max-width: 768px) {
-      .hero-header h1 {
-        font-size: 90px;
-      }
-    }
-
-    /* MAIN CONTENT GRID */
-    .content {
-      display: grid;
-      grid-template-columns: 1fr auto;
+    /* DESKTOP HEADER ROW */
+    .header-row {
+      display: flex;
+      align-items: center;
       gap: 20px;
       padding: 20px;
-      align-items: start;
     }
 
-    /* TEXT ON LEFT */
-    .text-block {
-      color: #0000ff;
-      font-size: 20px;
-      max-width: 500px;
-      line-height: 1.4;
+    .header-row h1 {
+      font-family: "Bradthen";
+      font-size: 175px;
+      color: #cdebf9;
+      margin: 0;
+      transform: rotate(-1deg);
+      letter-spacing: -3px;
+      line-height: 0.9;
     }
 
-    /* IMAGE AREA ON RIGHT (DESKTOP) */
-    .image-group {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
-    .image-group img {
-      width: 150px;
-      height: auto;
+    /* IMAGES KEEP PROPORTIONS */
+    .header-row img {
+      height: 150px;
+      width: auto;
       border-radius: 0;
     }
 
     /* MOBILE LAYOUT */
     @media (max-width: 768px) {
 
-      .content {
-        grid-template-columns: 1fr;
+      /* First row: title + eye */
+      .header-row {
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      /* TEXT + EYE SIDE BY SIDE */
-      .text-block {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: flex-start;
+      .header-row h1 {
+        font-size: 90px;
+        width: auto;
       }
 
+      /* Hide desktop eye, show mobile eye */
       .eye-desktop {
         display: none;
       }
 
       .eye-mobile {
         display: block;
-        width: 120px;
+        height: 90px;
+        width: auto;
       }
 
-      /* OTHER TWO IMAGES BELOW */
-      .image-group {
+      /* Second row: website + paprika */
+      .image-row-mobile {
+        display: flex;
         justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
       }
 
-      .image-group img {
-        width: 130px;
+      .image-row-mobile img {
+        height: 110px;
+        width: auto;
       }
     }
 
@@ -110,39 +86,51 @@
       display: none;
     }
 
+    /* BIO TEXT */
+    .text-block {
+      color: #0000ff;
+      font-size: 20px;
+      max-width: 700px;
+      margin: 20px;
+      line-height: 1.4;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div class="hero-header">
+  <!-- DESKTOP: title + eye + website + paprika -->
+  <!-- MOBILE: title + eye only -->
+  <div class="header-row">
+
     <h1>WELCOME TO MY PAGE</h1>
+
+    <!-- Eye (desktop version) -->
+    <img class="eye-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+
+    <!-- Eye (mobile version) -->
+    <img class="eye-mobile" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
+
+    <!-- Website + Paprika (desktop only) -->
+    <img class="web-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
+    <img class="paprika-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
+
   </div>
 
-  <!-- MAIN CONTENT -->
-  <div class="content">
+  <!-- MOBILE: second row (website + paprika) -->
+  <div class="image-row-mobile">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
+  </div>
 
-    <!-- TEXT + (mobile eye) -->
-    <div class="text-block">
-      <p>
-        My Name Is Eva Ruth.
-        <a href="art.html">I draw and paint</a> and
-        <a href="erf.html">I love Earth</a>.
-        This is extra memory space to store my thoughts and document my life.
-      </p>
-
-      <!-- Eye image for mobile -->
-      <img class="eye-mobile" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
-    </div>
-
-    <!-- IMAGES -->
-    <div class="image-group">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/web.jpg">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/paprika.jpg">
-      <img class="eye-desktop" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/eye.JPEG">
-    </div>
-
+  <!-- BIO TEXT (never interacts with images) -->
+  <div class="text-block">
+    <p>
+      My Name Is Eva Ruth.
+      <a href="art.html">I draw and paint</a> and
+      <a href="erf.html">I love Earth</a>.
+      This is extra memory space to store my thoughts and document my life.
+    </p>
   </div>
 
 </body>
