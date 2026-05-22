@@ -26,7 +26,7 @@
       gap: 15px;
       padding: 20px;
       max-width: 100%;
-      flex-wrap: nowrap; /* default desktop layout */
+      flex-wrap: nowrap; /* desktop default */
     }
 
     .header-row h1 {
@@ -47,52 +47,55 @@
       width: auto;
     }
 
+    /* DESKTOP ONLY */
+    @media (min-width: 769px) {
+      .header-row {
+        flex-wrap: nowrap;
+      }
+    }
+
     /* MOBILE LAYOUT */
     @media (max-width: 768px) {
 
       .header-row {
-        flex-direction: column; /* stack rows */
-        align-items: flex-start; 
+        flex-direction: column;
+        align-items: flex-start;
         padding: 10px;
+        gap: 15px;
+      }
+
+      /* FIRST ROW: TITLE + EYE */
+      .header-row-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .header-row-top h1 {
+        font-size: 60px;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .header-row-top .eye {
+        height: 55px;
+        flex: 0 0 auto;
+      }
+
+      /* SECOND ROW: WEB + PAPRIKA */
+      .header-row-bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
         gap: 10px;
       }
 
-      /* First row: title + eye */
-      .header-row h1, .header-row .eye {
-        order: 1;
-      }
-
-      .header-row h1 {
-        font-size: 60px;
-        line-height: 1;
-      }
-
-      .header-row .eye {
-        height: 55px;
-        align-self: flex-end; /* place on right */
-      }
-
-      /* Second row: web + paprika */
-      .web, .paprika {
-        order: 2;
-        height: 150px;   /* same height for both */
-        width: auto;     /* maintain aspect ratio */
+      .header-row-bottom img {
+        flex: 1;
+        height: 150px;   /* same height */
+        width: auto;
         object-fit: cover;
-      }
-
-      .header-row .web, .header-row .paprika {
-        align-self: stretch;
-      }
-
-      /* Arrange side by side */
-      .header-row .web, .header-row .paprika {
-        display: inline-block;
-        width: 48%;
-        margin-right: 2%;
-      }
-
-      .header-row .paprika {
-        margin-right: 0;
       }
     }
 
@@ -111,10 +114,15 @@
 <body>
 
   <div class="header-row">
-    <h1>WELCOME TO MY PAGE</h1>
-    <img class="eye" src="pics/eye.JPEG" alt="Eye">
-    <img class="web" src="pics/web.jpg" alt="Web">
-    <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
+    <div class="header-row-top">
+      <h1>WELCOME TO MY PAGE</h1>
+      <img class="eye" src="pics/eye.JPEG" alt="Eye">
+    </div>
+
+    <div class="header-row-bottom">
+      <img class="web" src="pics/web.jpg" alt="Web">
+      <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
+    </div>
   </div>
 
   <div class="text-block">
