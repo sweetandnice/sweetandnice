@@ -18,7 +18,7 @@
       font-weight: 400;
     }
 
-    /* BASE HEADER ROW */
+    /* Base header row */
     .header-row {
       display: flex;
       align-items: center;
@@ -41,13 +41,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Desktop image sizing */
+    /* Desktop images */
     .header-row img {
       height: 130px;
       width: auto;
     }
 
-    /* DESKTOP ONLY */
+    /* Desktop layout */
     @media (min-width: 769px) {
       .header-row {
         flex-wrap: nowrap;
@@ -57,33 +57,37 @@
     /* MOBILE LAYOUT */
     @media (max-width: 768px) {
 
-      .header-row {
+      /* First row: WELCOME + EYE */
+      .header-row-top {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
         padding: 10px;
-        gap: 10px;
       }
 
-      /* FIRST ROW: WELCOME + EYE */
-      .header-row h1 {
+      .header-row-top h1 {
         font-size: 55px;
-        order: 1;
-        flex: 1; /* take remaining space */
+        flex: 1;
         text-align: left;
       }
 
-      .eye {
-        order: 2;
-        height: 40px; /* smaller on mobile */
+      .header-row-top .eye {
+        height: 35px; /* smaller on mobile */
         flex: 0 0 auto;
       }
 
-      /* SECOND ROW: WEB + PAPRIKA */
-      .web, .paprika {
-        order: 3;
-        flex: 0 0 48%; /* roughly half width each */
+      /* Second row: WEB + PAPRIKA */
+      .header-row-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .header-row-bottom img {
+        width: 48%;
         height: auto;
         object-fit: contain; /* prevent stretching */
       }
@@ -103,9 +107,13 @@
 
 <body>
 
-  <div class="header-row">
+  <!-- Mobile-friendly header with two separate rows -->
+  <div class="header-row header-row-top">
     <h1>WELCOME TO MY PAGE</h1>
     <img class="eye" src="pics/eye.JPEG" alt="Eye">
+  </div>
+
+  <div class="header-row header-row-bottom">
     <img class="web" src="pics/web.jpg" alt="Web">
     <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
   </div>
@@ -121,4 +129,3 @@
 
 </body>
 </html>
-
