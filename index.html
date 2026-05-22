@@ -43,22 +43,35 @@
   }
 
   /* MOBILE LAYOUT */
- @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   .header-row {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px; /* tighter spacing */
+    gap: 4px;
+    padding: 10px;
   }
 
   .header-row h1 {
-    font-size: 55px; /* smaller title */
+    font-size: 55px;
     order: 1;
   }
 
   .eye {
-    height: 55px; /* smaller eye */
+    height: 45px;
     order: 2;
+  }
+
+  .web {
+    height: 70px;
+    order: 3;
+    flex: 0 0 auto;
+  }
+
+  .paprika {
+    height: 70px;
+    order: 4;
+    flex: 0 0 auto;
   }
 
   /* Website + Paprika row */
