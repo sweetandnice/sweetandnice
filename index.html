@@ -18,15 +18,13 @@ body {
   font-weight: 400;
 }
 
-/* Base header row */
+/* DESKTOP LAYOUT (default) */
 .header-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   padding: 20px;
-  max-width: 100%;
-  flex-wrap: nowrap; /* desktop default */
 }
 
 .header-row h1 {
@@ -47,55 +45,49 @@ body {
   width: auto;
 }
 
-/* Desktop layout */
+/* Make the two wrapper divs disappear on desktop so all 4 items sit in one row */
 @media (min-width: 769px) {
-  .header-row {
-    flex-wrap: nowrap;
+  .header-row-top,
+  .header-row-bottom {
+    display: contents;
   }
 }
 
-/* Mobile layout */
+/* MOBILE LAYOUT */
 @media (max-width: 768px) {
 
+  /* Use a 2×2 grid */
   .header-row {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     padding: 10px;
-    gap: 15px;
   }
 
-  /* First row: title + eye */
-  .header-row-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
+  /* Row 1: title + eye */
   .header-row-top h1 {
-    font-size: 60px;
-    line-height: 1;
+    grid-column: 1;
+    font-size: 55px;
     margin: 0;
   }
 
   .header-row-top .eye {
+    grid-column: 2;
+    justify-self: end;
     height: 55px;
-    flex: 0 0 auto;
   }
 
-  /* Second row: web + paprika */
-  .header-row-bottom {
-    display: flex;
-    justify-content: space-between;
+  /* Row 2: web + paprika */
+  .header-row-bottom .web {
+    grid-column: 1;
     width: 100%;
-    gap: 10px;
+    height: auto;
   }
 
-  .header-row-bottom img {
-    flex: 1;
-    height: 150px;
-    width: auto;
-    object-fit: cover;
+  .header-row-bottom .paprika {
+    grid-column: 2;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -114,17 +106,19 @@ body {
 <body>
 
 <div class="header-row">
-  <!-- Mobile first row -->
+
+  <!-- Row 1 (mobile) -->
   <div class="header-row-top">
     <h1>WELCOME TO MY PAGE</h1>
     <img class="eye" src="pics/eye.JPEG" alt="Eye">
   </div>
 
-  <!-- Mobile second row -->
+  <!-- Row 2 (mobile) -->
   <div class="header-row-bottom">
     <img class="web" src="pics/web.jpg" alt="Web">
     <img class="paprika" src="pics/paprika.jpg" alt="Paprika">
   </div>
+
 </div>
 
 <div class="text-block">
@@ -138,3 +132,4 @@ body {
 
 </body>
 </html>
+
