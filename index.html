@@ -65,38 +65,37 @@ body {
   .header-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 12px;
+    gap: 14px;
+    padding: 14px;
   }
 
   /* Row 1: Title + Eye */
   .header-row h1 {
     grid-column: 1;
-    font-size: 52px;  /* bigger text */
+    font-size: 52px;
     margin: 0;
     line-height: 1.05;
   }
 
-  .eye {
+  .header-row .eye {
     grid-column: 2;
     justify-self: end;
-    height: 32px;     /* smaller eye */
-    width: auto;
+    height: 32px !important;   /* override desktop */
+    width: auto !important;
   }
 
   /* Row 2: Web + Paprika */
-  .web,
-  .paprika {
+  .header-row .web,
+  .header-row .paprika {
     grid-row: 2;
-    width: 100%;
-    height: 115px;     /* SAME height for both */
-    object-fit: cover; /* fills the box evenly */
-    border-radius: 4px;
+    width: 100% !important;
+    height: 115px !important;   /* SAME height */
+    object-fit: cover !important;
     display: block;
   }
 
-  .web { grid-column: 1; }
-  .paprika { grid-column: 2; }
+  .header-row .web { grid-column: 1; }
+  .header-row .paprika { grid-column: 2; }
 }
 
 /* BIO TEXT */
