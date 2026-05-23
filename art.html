@@ -12,6 +12,7 @@
       background-color: black;
       margin: 0;
       padding: 0;
+      font-family: "Comic Neue", sans-serif;
     }
 
     p {
@@ -22,344 +23,35 @@
 
     a {
       color: #ff9be6;
+      text-decoration: none;
     }
 
-    /* Top layout (desktop) */
-    .top-layout {
-      display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      margin: 20px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .portrait-column img {
-      width: 380px;
-      height: 500px;
-      object-fit: cover;
+    .intro {
+      padding: 20px;
+    }
+
+    .intro img {
+      width: 250px;
+      border-radius: 10px;
       display: block;
-    }
-
-    .right-column {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .intro-line {
-      font-size: 22px;
-      margin: 0 0 8px 0;
-      color: white;
-    }
-
-    /* Galleries */
-    .galleries-row {
-      display: flex;
-      gap: 30px;
-      margin-top: 12px;
-    }
-
-    .gallery-block {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-label {
-      font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-      font-weight: 400;
-      font-size: 20px;
-      margin: 0 0 4px 0;
-    }
-
-    .pink-label { color: #ff008f; }
-    .yellow-label { color: #fff100; }
-
-    .slide { display: none; }
-    .slide.active { display: block; }
-
-    .gallery-block img {
-      width: 100%;
-      max-width: 300px;
-      height: 360px;
-      object-fit: contain;
-      border: 4px solid #ff008f;
-      background-color: black;
-    }
-
-    #gallery2 img { border-color: #fff100; }
-
-    .caption {
-      font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-      font-weight: 400;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    #caption1 { color: #ff008f; }
-    #caption2 { color: #fff100; }
-
-    .full-width {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-top: 20px;
-    }
-
-    /* Lower section */
-    .side-by-side {
-      display: flex;
-      gap: 30px;
-      margin: 20px;
-    }
-
-    .screenshot-block img {
-      width: 400px;
-      height: auto;
-    }
-
-    .text-block {
-      flex: 1;
-    }
-
-    #printmaking-gallery img {
-      transform: rotate(90deg);
-    }
-
-    /* Mobile layout */
-    @media (max-width: 700px) {
-
-      .top-layout {
-        flex-direction: column;
-        margin: 16px;
-        gap: 16px;
-      }
-
-      .mobile-top-row {
-        display: flex;
-        flex-direction: row;
-        gap: 12px;
-      }
-
-      .portrait-column {
-        flex: 0 0 55%;
-      }
-
-      .portrait-column img {
-        width: 100%;
-        height: auto;
-      }
-
-      /* Move intro text next to portrait */
-      .right-column .intro-line {
-        order: -1;
-        font-size: 16px;
-        line-height: 1.3;
-        margin-bottom: 0;
-      }
-
-      .galleries-row {
-        flex-direction: row;
-        gap: 12px;
-        width: 100%;
-      }
-
-      .gallery-block img {
-        width: 100%;
-        height: auto;
-        max-width: none;
-      }
-
-      .gallery-label,
-      .caption {
-        font-weight: 700;
-      }
-
-      .side-by-side {
-        flex-direction: column;
-        margin: 20px 16px;
-      }
-
-      .screenshot-block img {
-        width: 100%;
-      }
-
-      .printmaking-section {
-        width: 100%;
-        padding: 0 16px;
-        box-sizing: border-box;
-      }
-
-      #printmaking-gallery img {
-        width: 100%;
-        max-width: calc(100vw - 32px);
-        height: auto;
-        display: block;
-        transform: rotate(90deg);
-      }
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top section -->
-  <div class="top-layout">
-
-    <div class="mobile-top-row">
-      <div class="portrait-column">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg">
-      </div>
-
-      <!-- Only intro paragraph (used for both desktop + mobile) -->
-      <div class="right-column">
-        <p class="intro-line">
-          I have always enjoyed making art ^-^ I am inspired by 
-          <a href="artists-i-like.html">artists I like</a> and things I see.
-        </p>
-      </div>
-    </div>
-
-    <!-- Desktop galleries live here -->
-    <div class="right-column desktop-only">
-
-      <div class="galleries-row">
-        <div class="gallery-block">
-          <p class="gallery-label pink-label">Studies:</p>
-
-          <div id="gallery1">
-            <div class="slide active">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png">
-            </div>
-          </div>
-
-          <p class="caption" id="caption1"></p>
-        </div>
-
-        <div class="gallery-block">
-          <p class="gallery-label yellow-label">Sketches:</p>
-
-          <div id="gallery2">
-            <div class="slide active">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-03-30%20093109.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202023-07-19%20103336.png">
-            </div>
-            <div class="slide">
-              <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Cow%20painting.png">
-            </div>
-          </div>
-
-          <p class="caption" id="caption2"></p>
-        </div>
-      </div>
-
-    </div>
-
+  <div class="intro">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
+    <p>
+      I have always enjoyed making art ^-^ I am inspired by 
+      <a href="artists-i-like.html">artists I like</a> and things I see.
+    </p>
   </div>
-
-  <!-- Banner image -->
-  <img class="full-width" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/project3.png">
-
-  <!-- Lower section -->
-  <div class="side-by-side">
-
-    <div class="text-block">
-      <p>
-        In an art and ecology course I took, I was assigned the task of turning a quick intuitive gesture made with ink and a bird's feather into a multimedia piece incorporating the feather itself, which would represent both an animal and an environmental activist that speaks to us. Instead of picking a singular activist, I chose to portray collective action by interpreting the Chipko (tree-hugging) movement, an anti-logging protest which took place in rural Himalayan highlands in the 1970's where women wrapped themselves around trees, alongside a siphonophore, a deep-sea organism that is not a single creature but a community of specialized bodies (zooids) working together as one.
-      </p>
-    </div>
-    
-    <div class="screenshot-block">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Screenshot%202026-03-22%20194435.png">
-    </div>
-  </div>
-  
-  <!-- Printmaking -->
-  <div class="side-by-side printmaking-section">
-    
-    <div class="gallery-block" id="printmaking-gallery">
-      <p class="gallery-label pink-label">Printmaking:</p>
-
-      <div class="slide active">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/blupeach.png">
-      </div>
-
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/blupink.png">
-      </div>
-
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/blu.png">
-      </div>
-      
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/pinkgreen.png">
-      </div>
-      
-      <div class="slide">
-        <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/pinkpink.png">
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    let index1 = 0;
-    const slides1 = document.querySelectorAll('#gallery1 .slide');
-    const captions1 = [
-      "Oil painting of Townes Van Zandt",
-      "Acrylic painting inspired by Isabel Allende's House of the Spirits",
-      "Watercolor Golden Snub-Nosed Monkey Book"
-    ];
-    const caption1 = document.getElementById("caption1");
-    caption1.textContent = captions1[0];
-
-    function next1() {
-      slides1[index1].classList.remove('active');
-      index1 = (index1 + 1) % slides1.length;
-      slides1[index1].classList.add('active');
-      caption1.textContent = captions1[index1];
-    }
-    setInterval(next1, 3000);
-
-    let index2 = 0;
-    const slides2 = document.querySelectorAll('#gallery2 .slide');
-    const captions2 = [
-      "Figure drawing June 2022",
-      "Sketchbook page circa 2020",
-      "Midwest study July 2022"
-    ];
-    const caption2 = document.getElementById("caption2");
-    caption2.textContent = captions2[0];
-
-    function next2() {
-      slides2[index2].classList.remove('active');
-      index2 = (index2 + 1) % slides2.length;
-      slides2[index2].classList.add('active');
-      caption2.textContent = captions2[index2];
-    }
-    setInterval(next2, 3000);
-
-    let indexP = 0;
-    const slidesP = document.querySelectorAll('#printmaking-gallery .slide');
-
-    function nextP() {
-      slidesP[indexP].classList.remove('active');
-      indexP = (indexP + 1) % slidesP.length;
-      slidesP[indexP].classList.add('active');
-    }
-
-    setInterval(nextP, 1000);
-  </script>
 
 </body>
 </html>
