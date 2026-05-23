@@ -7,55 +7,76 @@
 
   <style>
    body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  font-family: "Times New Roman", serif; 
-}
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", serif; 
+    }
 
-p {
-  font-size: 20px;
-  color: #ff008f; /* hot pink */
-  line-height: 1.5;
-  text-align: center;
-}
+    p {
+      font-size: 20px;
+      color: #ff008f; /* hot pink */
+      line-height: 1.5;
+      text-align: center;
+    }
 
-a {
-  color: #ff9be6;
-  text-decoration: none;
-}
+    a {
+      color: #ff9be6;
+      text-decoration: none;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.intro {
-  padding: 20px;
-  text-align: center; /* centers everything */
-}
+    .intro {
+      padding: 20px;
+      text-align: center;
+    }
 
-.intro img {
-  width: 350px;
-  border-radius: 0; 
-  display: block;
-  margin: 0 auto 15px auto; /* centers the image */
-}
+    .intro img {
+      width: 350px;
+      border-radius: 0; 
+      display: block;
+      margin: 0 auto 15px auto;
+    }
     
-.intro-photos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px; /* controls spacing */
-  margin-bottom: 15px;
-}
+    .intro-photos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
 
-.intro-photos img {
-  height: 350px;
-  width: auto;
-  border-radius: 0;
-  margin: 0; /* removes unwanted spacing */
-}
+    .intro-photos img {
+      height: 350px;
+      width: auto;
+      border-radius: 0;
+      margin: 0;
+    }
 
+    @media (max-width: 600px) {
+
+      .intro-photos {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 12px;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .intro-photos img {
+        height: 250px; /* mobile size */
+        flex: 0 0 auto; /* prevents shrinking */
+      }
+
+      /* optional: hide scrollbar */
+      .intro-photos::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
   </style>
 </head>
@@ -76,6 +97,6 @@ a:hover {
   <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/flower.gif">
 </div>
 
-
 </body>
 </html>
+
