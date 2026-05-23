@@ -56,6 +56,39 @@
       margin: 0;
     }
 
+
+    .hover-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover-wrap img {
+      display: block;
+    }
+
+    .hover-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(37, 150, 190, 0.5); /* 50% orange shader */
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hover-wrap:hover .hover-text {
+      opacity: 1;
+    }
+
     @media (max-width: 600px) {
 
       .intro-photos {
@@ -69,10 +102,9 @@
 
       .intro-photos img {
         height: 250px; /* mobile size */
-        flex: 0 0 auto; /* prevents shrinking */
+        flex: 0 0 auto;
       }
 
-      /* optional: hide scrollbar */
       .intro-photos::-webkit-scrollbar {
         display: none;
       }
@@ -85,9 +117,19 @@
 
  <div class="intro">
   <div class="intro-photos">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png" alt="Transito">
+
+    <!-- TRANSITO SOTO WITH HOVER OVERLAY -->
+    <div class="hover-wrap">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png" alt="Transito">
+      <div class="hover-text">
+        Acrylic painting inspired by Isabel Allende's House of the Spirits
+      </div>
+    </div>
+
+    <!-- OTHER IMAGES (unchanged) -->
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png" alt="Monkey">
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
+
   </div>
 
   <p>
@@ -99,4 +141,3 @@
 
 </body>
 </html>
-
