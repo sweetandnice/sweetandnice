@@ -124,17 +124,27 @@ body {
   width: 100%;
   max-width: none;
   padding: 0 20px;
-  margin: 20px auto;
+  margin: 10px auto; /* reduced spacing */
   line-height: 1.4;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Responsive YouTube embed */
+/* Base iframe styling */
 .video-wrapper iframe {
   width: 100%;
-  aspect-ratio: 16 / 9;
   border: none;
+}
+
+/* DESKTOP: video matches exact height of image stacks */
+@media (min-width: 769px) {
+  .video-wrapper iframe {
+    height: 645px;   /* 4 images (150px each) + 3 gaps (15px each) */
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: unset;
+    display: block;
+  }
 }
 
 /* --- IMAGE + VIDEO TRIPTYCH LAYOUT --- */
@@ -143,8 +153,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px; /* spacing between stacks + video */
-  margin: 40px auto;
+  gap: 20px;
+  margin: 15px auto; /* reduced spacing */
   max-width: 1300px;
   padding: 0 20px;
 }
@@ -153,13 +163,13 @@ body {
 .side-stack {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* space between images */
+  gap: 15px;
 }
 
 .side-stack img {
   width: 150px;
   height: auto;
-  border-radius: 0; /* no curve */
+  border-radius: 0;
   display: block;
 }
 
