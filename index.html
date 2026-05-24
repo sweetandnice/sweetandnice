@@ -145,27 +145,21 @@ body {
   display: block;
 }
 
-/* CENTER: YouTube + Instagram side by side */
+/* CENTER: YOUTUBE ONLY */
 .video-center {
   flex: 1;
   display: flex;
-  gap: 20px;
   justify-content: center;
   align-items: flex-start;
 }
 
-.video-wrapper iframe,
-.insta-wrapper iframe {
+.video-wrapper iframe {
   width: 100%;
+  aspect-ratio: 16/9;
   border: none;
 }
 
-/* Instagram width control */
-.insta-wrapper {
-  max-width: 400px;
-}
-
-/* MOBILE — stacks become horizontal scroll strips, videos stack */
+/* MOBILE — stacks become horizontal scroll strips, video stacks */
 @media (max-width: 768px) {
 
   .video-section {
@@ -195,10 +189,6 @@ body {
   .video-center {
     flex-direction: column;
     width: 100%;
-  }
-
-  .insta-wrapper {
-    max-width: 100%;
   }
 }
 </style>
@@ -241,63 +231,14 @@ body {
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-160113.JPEG">
   </div>
 
-  <!-- CENTER: YOUTUBE + INSTAGRAM -->
+  <!-- CENTER: YOUTUBE ONLY -->
   <div class="video-center">
-
-    <!-- YouTube -->
     <div class="video-wrapper" style="flex: 1;">
       <iframe 
         src="https://www.youtube.com/embed/TB-lQcuo5xU?si=Q1pGS3LKtBbIA8XG"
-        style="aspect-ratio: 16/9;">
+        allowfullscreen>
       </iframe>
     </div>
-
-    <!-- Fake Instagram Embed -->
-<a href="https://www.instagram.com/p/CQCMsIwD9Gj/" target="_blank" 
-   style="flex:1; max-width:400px; text-decoration:none;">
-
-  <div style="
-    position:relative;
-    width:100%;
-    padding-top:125%; /* controls aspect ratio */
-    background:black;
-    overflow:hidden;
-    border-radius:0;
-  ">
-
-    <!-- Thumbnail -->
-    <img src="https://www.instagram.com/p/CQCMsIwD9Gj/media/?size=l"
-         style="
-           position:absolute;
-           top:0; left:0;
-           width:100%; height:100%;
-           object-fit:cover;
-         ">
-
-    <!-- Play Button -->
-    <div style="
-      position:absolute;
-      top:50%; left:50%;
-      transform:translate(-50%, -50%);
-      width:70px; height:70px;
-      background:rgba(255,255,255,0.85);
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    ">
-      <div style="
-        width:0; height:0;
-        border-left:22px solid black;
-        border-top:14px solid transparent;
-        border-bottom:14px solid transparent;
-        margin-left:6px;
-      "></div>
-    </div>
-
-  </div>
-</a>
-    
   </div>
 
   <!-- RIGHT STACK -->
