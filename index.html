@@ -117,14 +117,17 @@ body {
   }
 }
 
-/* BIO TEXT */
+/* Make text block full width */
 .text-block {
   color: #0000ff;
   font-size: 20px;
-  max-width: 700px;
+  width: 100%;
+  max-width: none;
+  padding: 0 20px;
   margin: 20px auto;
   line-height: 1.4;
-  text-align: left;
+  text-align: center; /* optional */
+  box-sizing: border-box;
 }
 
 /* Responsive YouTube embed */
@@ -146,11 +149,12 @@ body {
   padding: 0 20px;
 }
 
-/* vertical stacks on desktop */
-.side-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Remove rounded corners */
+.side-stack img {
+  width: 150px;
+  height: auto;
+  border-radius: 0;
+  display: block;
 }
 
 .side-stack img {
@@ -160,10 +164,14 @@ body {
   display: block;
 }
 
-/* center video */
+/* Make video bigger */
 .video-center {
   flex: 1;
-  max-width: 700px;
+  max-width: 900px; /* adjust as you like */
+}
+
+ .video-wrapper {
+   width: 100%;
 }
 
 /* MOBILE — stacks become horizontal scroll strips */
