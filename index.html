@@ -131,12 +131,16 @@ body {
   padding: 0 20px;
 }
 
-/* spacing between stacked images + remove curve */
 .side-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: flex;          /* ← THIS is the missing piece */
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 12px;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
 }
+
 
 .side-stack img {
   width: 150px;
