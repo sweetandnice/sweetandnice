@@ -90,10 +90,10 @@ body {
     height: 75px;
     width: auto;
     align-self: start;
-    margin-top: -10px; /* move eye upward */
+    margin-top: -10px;
   }
 
-  /* Row 2 — flexbox row */
+  /* Row 2 */
   .header-row-bottom {
     grid-column: 1 / span 2;
     display: flex;
@@ -109,7 +109,6 @@ body {
     display: block;
   }
 
-  /* Mobile hero visible */
   .hero-mobile { display: block; width: 100%; }
   .hero-desktop { display: none; }
 
@@ -133,6 +132,70 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
+}
+
+/* --- IMAGE + VIDEO TRIPTYCH LAYOUT --- */
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1300px;
+  padding: 0 20px;
+}
+
+/* vertical stacks on desktop */
+.side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-stack img {
+  width: 150px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* center video */
+.video-center {
+  flex: 1;
+  max-width: 700px;
+}
+
+/* MOBILE — stacks become horizontal scroll strips */
+@media (max-width: 768px) {
+
+  .video-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .side-stack {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 12px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .side-stack img {
+    width: 180px;
+    flex: 0 0 auto;
+  }
+
+  .side-stack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .video-center {
+    width: 100%;
+  }
 }
 </style>
 </head>
@@ -168,12 +231,35 @@ body {
   </p>
 </div>
 
-<!-- YouTube video -->
-<div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube.com/embed/TB-lQcuo5xU?si=Q1pGS3LKtBbIA8XG"
-    allowfullscreen>
-  </iframe>
+<!-- ⭐ NEW IMAGE + VIDEO TRIPTYCH SECTION -->
+<div class="video-section">
+
+  <!-- LEFT STACK -->
+  <div class="side-stack">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-155400%20(1).JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-155400.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-155926002.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-160113.JPEG">
+  </div>
+
+  <!-- CENTER VIDEO -->
+  <div class="video-center">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/TB-lQcuo5xU?si=Q1pGS3LKtBbIA8XG"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- RIGHT STACK -->
+  <div class="side-stack">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-160312.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-161529.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-161952002.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/20250306-161844.JPEG">
+  </div>
+
 </div>
 
 </body>
