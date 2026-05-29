@@ -131,16 +131,12 @@ body {
   padding: 0 20px;
 }
 
+/* DESKTOP — vertical stacks */
 .side-stack {
-  display: flex;          /* ← THIS is the missing piece */
-  flex-direction: row;
-  overflow-x: auto;
-  white-space: nowrap;
-  gap: 12px;
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-
 
 .side-stack img {
   width: 150px;
@@ -163,7 +159,7 @@ body {
   border: none;
 }
 
-/* MOBILE — stacks become horizontal scroll strips, video stacks */
+/* MOBILE — horizontal scroll stacks */
 @media (max-width: 768px) {
 
   .video-section {
@@ -173,6 +169,7 @@ body {
   }
 
   .side-stack {
+    display: flex;
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
