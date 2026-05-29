@@ -166,20 +166,24 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    width: 100%;
+    padding: 0;
   }
 
+  /* MOBILE — horizontal scroll stacks */
   .side-stack {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    gap: 12px;
-    padding-bottom: 10px;
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
     -webkit-overflow-scrolling: touch;
   }
 
   .side-stack img {
-    width: 180px;
+    width: 140px;      /* smaller images */
     flex: 0 0 auto;
   }
 
@@ -187,11 +191,25 @@ body {
     display: none;
   }
 
+  /* MOBILE — full‑width YouTube */
   .video-center {
-    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .video-wrapper {
     width: 100%;
   }
+
+  .video-wrapper iframe {
+    width: 100vw;        /* full screen width */
+    margin-left: calc(-50vw + 50%); /* centers it perfectly */
+    aspect-ratio: 16/9;
+    border: none;
+  }
 }
+
 </style>
 </head>
 
