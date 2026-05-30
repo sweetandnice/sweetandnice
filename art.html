@@ -29,6 +29,15 @@
       text-decoration: underline;
     }
 
+    /* ⭐ TOP GIF FIX */
+    .top-gif {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     .intro {
       padding: 20px;
       text-align: center;
@@ -102,7 +111,7 @@
       opacity: 1;
     }
 
-    /* MOBILE FIXES */
+    /* ⭐ MOBILE FIXES */
     @media (max-width: 600px) {
 
       .intro-photos {
@@ -123,23 +132,38 @@
         display: none;
       }
 
-      /* Make overlay fit text on mobile */
+      /* ⭐ FIX: allow overlay text to wrap and expand */
       .hover-text {
-        height: auto;
-        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        height: auto;          /* allow overlay to grow */
+        min-height: 100%;      /* still covers image */
         padding: 16px;
         font-size: 14px;
+
+        display: flex;
         align-items: flex-start;
-        overflow-y: auto;
+        justify-content: flex-start;
+        text-align: left;
+
+        overflow-y: auto;      /* scroll if needed */
+        white-space: normal;   /* ⭐ allow wrapping */
+        word-break: break-word;
       }
     }
 
   </style>
 </head>
-pixil-gif-drawing (6).gif
+
 <body>
-<img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/pixil-gif-drawing%20(6).gif">
- <div class="intro">
+
+<!-- ⭐ FIXED GIF -->
+<img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/Stuff-i-made-ezgif.com-reverse.gif">
+
+<div class="intro">
   <div class="intro-photos">
 
     <!-- TRANSITO SOTO -->
@@ -178,3 +202,4 @@ pixil-gif-drawing (6).gif
 
 </body>
 </html>
+
