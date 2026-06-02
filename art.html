@@ -6,11 +6,11 @@
   <title>About My Art</title>
 
   <style>
-   body {
+    body {
       background-color: black;
       margin: 0;
       padding: 0;
-      font-family: "Times New Roman", serif; 
+      font-family: "Times New Roman", serif;
     }
 
     p {
@@ -43,13 +43,40 @@
       text-align: center;
     }
 
-    .intro img {
-      width: 350px;
-      border-radius: 0;
-      display: block;
-      margin: 0 auto 15px auto;
+    /* ⭐ DESKTOP SIDE-BY-SIDE LAYOUT */
+    @media (min-width: 601px) {
+      .desktop-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        margin: 40px auto;
+        max-width: 1200px;
+      }
+
+      .portrait {
+        width: 350px;
+        height: auto;
+        display: block;
+      }
+
+      .full-video {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+      }
     }
-    
+
+    /* Zine Video */
+    .full-video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto 10px auto;
+    }
+
+    /* Scroll bar of art images */
     .intro-photos {
       display: flex;
       justify-content: center;
@@ -111,15 +138,6 @@
       opacity: 1;
     }
 
-    /* Zine Video */
-    .full-video {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto 10px auto;
-}
-
     /* ⭐ MOBILE FIXES */
     @media (max-width: 600px) {
 
@@ -148,8 +166,8 @@
         left: 0;
         width: 100%;
 
-        height: auto;          /* allow overlay to grow */
-        min-height: 100%;      /* still covers image */
+        height: auto;
+        min-height: 100%;
         padding: 16px;
         font-size: 14px;
 
@@ -158,8 +176,8 @@
         justify-content: flex-start;
         text-align: left;
 
-        overflow-y: auto;      /* scroll if needed */
-        white-space: normal;   /* ⭐ allow wrapping */
+        overflow-y: auto;
+        white-space: normal;
         word-break: break-word;
       }
     }
@@ -173,9 +191,19 @@
 <img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/stuff_i_made.gif">
 
 <div class="intro">
+
+  <!-- ⭐ NEW DESKTOP ROW: PORTRAIT + VIDEO -->
+  <div class="desktop-row">
+    <img class="portrait" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
+
+    <video class="full-video" autoplay loop muted playsinline>
+      <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/0001-0465.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- ⭐ SCROLL BAR UNDERNEATH -->
   <div class="intro-photos">
 
-    <!-- TRANSITO SOTO -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png" alt="Transito">
       <div class="hover-text">
@@ -183,17 +211,10 @@
       </div>
     </div>
 
-    <!-- MONKE -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png" alt="Monkey">
     </div>
 
-    <!-- BBY-E -->
-    <div class="hover-wrap">
-      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
-    </div>
-
-    <!-- TOWNES -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png" alt="Townes">
       <div class="hover-text">
@@ -203,20 +224,11 @@
 
   </div>
 
-  <p>
-    I have always enjoyed making art ^-^ I am inspired by artists I like and things I see.
-  </p>
+  <p>I have always enjoyed making art ^-^ I am inspired by artists I like and things I see.</p>
 
-  <video class="full-video" autoplay loop muted playsinline>
-    <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/0001-0465.mp4" type="video/mp4">
-  </video>
+  <p>Digital recreation of a zine I printed IRL made using Blender.</p>
 
-  <p>
-    Digital recreation of a zine I printed IRL made using Blender.
-  </p>
-  
 </div>
 
 </body>
 </html>
-
