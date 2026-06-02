@@ -29,10 +29,9 @@
       text-decoration: underline;
     }
 
-    /* ⭐ TOP GIF FIX */
+    /* ⭐ TOP GIF */
     .top-gif {
       width: 100%;
-      max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -49,34 +48,34 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 30px;
+        gap: 40px;
         margin: 40px auto;
         max-width: 1200px;
+        padding: 0 20px;
       }
 
       .portrait {
         width: 350px;
+        max-width: 350px;
         height: auto;
         display: block;
       }
 
       .full-video {
-        width: 100%;
-        max-width: 600px;
+        width: 600px;
+        max-width: 100%;
         height: auto;
       }
     }
 
-    /* Zine Video */
+    /* ⭐ VIDEO (base) */
     .full-video {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
       display: block;
+      height: auto;
       margin: 20px auto 10px auto;
     }
 
-    /* Scroll bar of art images */
+    /* ⭐ SCROLL BAR OF ART IMAGES */
     .intro-photos {
       display: flex;
       justify-content: center;
@@ -127,12 +126,10 @@
       pointer-events: none;
     }
 
-    /* Desktop hover */
     .hover-wrap:hover .hover-text {
       opacity: 1;
     }
 
-    /* Mobile tap */
     .hover-wrap:active .hover-text,
     .hover-wrap:focus .hover-text {
       opacity: 1;
@@ -159,7 +156,6 @@
         display: none;
       }
 
-      /* ⭐ FIX: allow overlay text to wrap and expand */
       .hover-text {
         position: absolute;
         top: 0;
@@ -187,17 +183,17 @@
 
 <body>
 
-<!-- ⭐ FIXED GIF -->
+<!-- ⭐ TOP GIF -->
 <img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/stuff_i_made.gif">
 
 <div class="intro">
 
-  <!-- ⭐ NEW DESKTOP ROW: PORTRAIT + VIDEO -->
+  <!-- ⭐ DESKTOP ROW: PORTRAIT + VIDEO -->
   <div class="desktop-row">
     <img class="portrait" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
 
     <video class="full-video" autoplay loop muted playsinline>
-      <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/0001-0465.mp4" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/videos/0001-0465.mp4" type="video/mp4">
     </video>
   </div>
 
