@@ -111,6 +111,15 @@
       opacity: 1;
     }
 
+    /* ⭐ ZINE VIDEO FIX */
+    .zine-video {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
     /* ⭐ MOBILE FIXES */
     @media (max-width: 600px) {
 
@@ -139,8 +148,8 @@
         left: 0;
         width: 100%;
 
-        height: auto;          /* allow overlay to grow */
-        min-height: 100%;      /* still covers image */
+        height: auto;
+        min-height: 100%;
         padding: 16px;
         font-size: 14px;
 
@@ -149,8 +158,8 @@
         justify-content: flex-start;
         text-align: left;
 
-        overflow-y: auto;      /* scroll if needed */
-        white-space: normal;   /* ⭐ allow wrapping */
+        overflow-y: auto;
+        white-space: normal;
         word-break: break-word;
       }
     }
@@ -198,7 +207,11 @@
     I have always enjoyed making art ^-^ I am inspired by artists I like and things I see.
   </p>
 
-  <img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/videos/zine.mp4">
+  <!-- ⭐ FIXED ZINE VIDEO -->
+  <video class="zine-video" autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/videos/zine.mp4" type="video/mp4">
+  </video>
+
   <p>
     Digital recreation of a zine I printed IRL made using Blender.
   </p>
@@ -207,3 +220,4 @@
 
 </body>
 </html>
+
