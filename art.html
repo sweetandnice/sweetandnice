@@ -6,11 +6,11 @@
   <title>About My Art</title>
 
   <style>
-    body {
+   body {
       background-color: black;
       margin: 0;
       padding: 0;
-      font-family: "Times New Roman", serif;
+      font-family: "Times New Roman", serif; 
     }
 
     p {
@@ -29,9 +29,10 @@
       text-decoration: underline;
     }
 
-    /* ⭐ TOP GIF */
+    /* ⭐ TOP GIF FIX */
     .top-gif {
       width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -42,40 +43,13 @@
       text-align: center;
     }
 
-    /* ⭐ DESKTOP SIDE-BY-SIDE LAYOUT */
-    @media (min-width: 601px) {
-      .desktop-row {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 40px;
-        margin: 40px auto;
-        max-width: 1200px;
-        padding: 0 20px;
-      }
-
-      .portrait {
-        width: 350px;
-        max-width: 350px;
-        height: auto;
-        display: block;
-      }
-
-      .full-video {
-        width: 600px;
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    /* ⭐ VIDEO (base) */
-    .full-video {
+    .intro img {
+      width: 350px;
+      border-radius: 0;
       display: block;
-      height: auto;
-      margin: 20px auto 10px auto;
+      margin: 0 auto 15px auto;
     }
-
-    /* ⭐ SCROLL BAR OF ART IMAGES */
+    
     .intro-photos {
       display: flex;
       justify-content: center;
@@ -126,10 +100,12 @@
       pointer-events: none;
     }
 
+    /* Desktop hover */
     .hover-wrap:hover .hover-text {
       opacity: 1;
     }
 
+    /* Mobile tap */
     .hover-wrap:active .hover-text,
     .hover-wrap:focus .hover-text {
       opacity: 1;
@@ -156,14 +132,15 @@
         display: none;
       }
 
+      /* ⭐ FIX: allow overlay text to wrap and expand */
       .hover-text {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
 
-        height: auto;
-        min-height: 100%;
+        height: auto;          /* allow overlay to grow */
+        min-height: 100%;      /* still covers image */
         padding: 16px;
         font-size: 14px;
 
@@ -172,8 +149,8 @@
         justify-content: flex-start;
         text-align: left;
 
-        overflow-y: auto;
-        white-space: normal;
+        overflow-y: auto;      /* scroll if needed */
+        white-space: normal;   /* ⭐ allow wrapping */
         word-break: break-word;
       }
     }
@@ -183,23 +160,13 @@
 
 <body>
 
-<!-- ⭐ TOP GIF -->
+<!-- ⭐ FIXED GIF -->
 <img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/stuff_i_made.gif">
 
 <div class="intro">
-
-  <!-- ⭐ DESKTOP ROW: PORTRAIT + VIDEO -->
-  <div class="desktop-row">
-    <img class="portrait" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
-
-    <video class="full-video" autoplay loop muted playsinline>
-      <source src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/videos/zine.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- ⭐ SCROLL BAR UNDERNEATH -->
   <div class="intro-photos">
 
+    <!-- TRANSITO SOTO -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/Transito%20soto.png" alt="Transito">
       <div class="hover-text">
@@ -207,10 +174,17 @@
       </div>
     </div>
 
+    <!-- MONKE -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/monke.png" alt="Monkey">
     </div>
 
+    <!-- BBY-E -->
+    <div class="hover-wrap">
+      <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/bby-e.jpg" alt="Portrait">
+    </div>
+
+    <!-- TOWNES -->
     <div class="hover-wrap">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/townes.png" alt="Townes">
       <div class="hover-text">
@@ -220,10 +194,15 @@
 
   </div>
 
-  <p>I have always enjoyed making art ^-^ I am inspired by artists I like and things I see.</p>
+  <p>
+    I have always enjoyed making art ^-^ I am inspired by artists I like and things I see.
+  </p>
 
-  <p>Digital recreation of a zine I printed IRL made using Blender.</p>
-
+  <img class="top-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/0001-0465.mp4">
+  <p>
+    Digital recreation of a zine I printed IRL made using Blender.
+  </p>
+  
 </div>
 
 </body>
