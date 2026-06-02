@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Things I like</title>
+  <title>Things I Like</title>
 
   <style>
     body {
@@ -20,12 +20,41 @@
       margin: 0 auto;
     }
 
-    p {
-      font-size: 20px;
-      color: #ff008f;
-      text-align: center;
+    /* DESKTOP: evenly spaced images in one row */
+    .like-photos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
       padding: 20px;
-      line-height: 1.5;
+      flex-wrap: nowrap;
+    }
+
+    .like-photos img {
+      height: 300px;
+      width: auto;
+      display: block;
+    }
+
+    /* ⭐ MOBILE: horizontal scroll bar */
+    @media (max-width: 600px) {
+      .like-photos {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 12px;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .like-photos img {
+        height: 220px;
+        flex: 0 0 auto;
+      }
+
+      .like-photos::-webkit-scrollbar {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -35,6 +64,20 @@
   <!-- HEADER IMAGE -->
   <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/emojik.jpg" alt="Header">
 
+  <!-- LYRICS -->
+  <div class="like-photos">
+
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3878.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3885.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3887.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3889.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3890.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3891.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3893.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3894.JPEG">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3895.JPEG">
+
+  </div>
 
 </body>
 </html>
