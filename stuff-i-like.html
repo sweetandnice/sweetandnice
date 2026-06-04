@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Things I Like</title>
 
   <style>
@@ -28,7 +28,7 @@
       }
     }
 
-    /* ⭐ SCROLL BAR (DESKTOP + MOBILE) */
+    /* ⭐ SCROLL BAR */
     .like-photos {
       display: flex;
       gap: 12px;
@@ -43,7 +43,7 @@
       display: none;
     }
 
-    /* ⭐ IMAGE SIZE (slightly smaller) */
+    /* ⭐ IMAGE SIZE */
     .like-photos img {
       height: 240px;
       width: auto;
@@ -51,11 +51,17 @@
       display: block;
     }
 
-    /* MOBILE */
     @media (max-width: 600px) {
       .like-photos img {
         height: 180px;
       }
+    }
+
+    /* ⭐ GIF AT BOTTOM */
+    .bottom-gif {
+      width: 260px;
+      display: block;
+      margin: 20px auto;
     }
   </style>
 </head>
@@ -65,7 +71,7 @@
   <!-- ⭐ HEADER IMAGE -->
   <img class="header-img" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/emojik.jpg" alt="Header">
 
-  <!-- LYRICS -->
+  <!-- ⭐ LYRICS SCROLLER -->
   <div class="like-photos">
 
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3878.JPEG">
@@ -75,7 +81,6 @@
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3890.JPEG">
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3891.JPEG">
 
-    <!-- ⭐ CLICKABLE IMAGE → YOUTUBE -->
     <a href="https://www.youtube.com/watch?v=NOZA8eqeiIk" target="_blank">
       <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3894.JPEG">
     </a>
@@ -85,6 +90,8 @@
 
   </div>
 
-  <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/gifs/daria.gif">
+  <!-- ⭐ GIF (FIXED PATH + CENTERED) -->
+  <img class="bottom-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/gifs/daria.gif" alt="daria gif">
+
 </body>
 </html>
