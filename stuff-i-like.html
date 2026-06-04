@@ -76,6 +76,7 @@
   display: block;
   margin-bottom: 8px;
   border-radius: 0;
+  min-height: 40px; /* forces the browser to keep the space */
 }
 
 .masonry-item h3 {
@@ -89,6 +90,12 @@
   font-size: 14px;
   opacity: 0.8;
 }
+    
+.gif-wrapper {
+  width: 100%;
+  display: block;
+}
+
 
 /* ⭐ MOBILE */
 @media (max-width: 600px) {
@@ -128,24 +135,13 @@
 <div class="masonry">
 
   <!-- 1. GIF FIRST -->
-  <div class="masonry-item">
+<div class="masonry-item">
+  <div class="gif-wrapper">
     <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/gifs/daria.gif" alt="">
-    <h3>Daria GIF</h3>
-    <p>A mood.</p>
   </div>
+  <h3>Daria GIF</h3>
+</div>
 
-  <!-- 2. LYRICS IMAGES AS GRID ITEMS -->
-  <div class="masonry-item">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3878.JPEG" alt="">
-    <h3>Page 1</h3>
-    <p>Journal notes.</p>
-  </div>
-
-  <div class="masonry-item">
-    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3885.JPEG" alt="">
-    <h3>Page 2</h3>
-    <p>More scribbles.</p>
-  </div>
 
 </div>
 
