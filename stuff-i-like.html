@@ -57,12 +57,46 @@
       }
     }
 
-    /* ⭐ GIF AT BOTTOM */
-    .bottom-gif {
-      width: 260px;
-      display: block;
-      margin: 20px auto;
-    }
+    /* ⭐ MASONRY GRID */
+.masonry {
+  column-count: 3;
+  column-gap: 16px;
+  padding: 20px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.masonry-item h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.masonry-item p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ⭐ MOBILE */
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
   </style>
 </head>
 
@@ -90,8 +124,30 @@
 
   </div>
 
-  <!-- ⭐ GIF (FIXED PATH + CENTERED) -->
-  <img class="bottom-gif" src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/gifs/daria.gif" alt="daria gif">
+  <!-- ⭐ MASONRY GRID SECTION -->
+<div class="masonry">
+
+  <!-- 1. GIF FIRST -->
+  <div class="masonry-item">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/gifs/daria.gif" alt="">
+    <h3>Daria GIF</h3>
+    <p>A mood.</p>
+  </div>
+
+  <!-- 2. LYRICS IMAGES AS GRID ITEMS -->
+  <div class="masonry-item">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3878.JPEG" alt="">
+    <h3>Page 1</h3>
+    <p>Journal notes.</p>
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://raw.githubusercontent.com/sweetandnice/sweetandnice/refs/heads/main/pics/lyrics/IMG_3885.JPEG" alt="">
+    <h3>Page 2</h3>
+    <p>More scribbles.</p>
+  </div>
+
+</div>
 
 </body>
 </html>
